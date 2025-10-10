@@ -37,8 +37,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">My Approach</h2>
             <p className="text-lg text-muted-foreground text-balance">
-              I lead with research, build with intention, and measure what matters. Every design decision ties back to
-              user needs and business goals—no feature ships without knowing why it exists and how we'll know it worked.
+              I lead with research, build with intention, and measure what matters. Every design decision ties back to user needs and business goals. Features ship with clear purpose and measurable success criteria.
             </p>
           </div>
 
@@ -51,12 +50,11 @@ export default function HomePage() {
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
                   <Building2 className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Enterprise DNA</CardTitle>
+                <CardTitle>Designing at Scale</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  I understand designing at scale: competing priorities, legacy constraints, and diverse user bases
-                  while maintaining brand consistency.
+                  I've spent my career designing for complex organizations where nothing is simple. I navigate competing priorities, work within legacy system constraints, and design for diverse user bases without sacrificing brand consistency or user experience.
                 </p>
               </CardContent>
             </Card>
@@ -71,7 +69,7 @@ export default function HomePage() {
               <CardContent>
                 <p className="text-muted-foreground">
                   I lead the entire process from user research and business alignment through implementation and
-                  measurement. My JTBD methodology has become a client template.
+                  measurement.
                 </p>
               </CardContent>
             </Card>
@@ -94,13 +92,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Case Studies */}
+      {/* Case Studies */}
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Featured Case Studies</h2>
+            <h2 className="text-3xl font-bold mb-4">Recent Work</h2>
             <p className="text-lg text-muted-foreground">
-              Transforming enterprise experiences through strategic UX leadership
+              Case studies about recent projects I've worked on.
             </p>
           </div>
 
@@ -195,9 +193,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
           <p className="text-lg text-muted-foreground text-balance mb-8">
-            I'm currently seeking design leadership opportunities where I can scale impact through team
-            development and strategic product thinking. If you're building a world-class design organization and want to
-            discuss how I can contribute, I'd love to hear from you.
+            I'm looking for my next leadership role where I can build teams and shape product strategy. If you're hiring a Principal Designer who knows how to ship, let's talk.
           </p>
           <div className="flex items-center justify-center gap-4 mb-8">
             <Button size="lg" asChild>

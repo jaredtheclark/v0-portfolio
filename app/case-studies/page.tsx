@@ -10,18 +10,15 @@ export default function CaseStudiesPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-balance mb-6">Case Studies</h1>
-          <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            Strategic UX leadership driving measurable business impact across Fortune 500 enterprises
-          </p>
+      {/* Header */}
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-3xl font-bold">Case Studies</h1>
         </div>
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-16 px-6">
+      <section className="py-0 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* America's Car-Mart Case Study */}
@@ -110,9 +107,9 @@ export default function CaseStudiesPage() {
                 <div className="mb-6">
                   <h4 className="font-semibold text-primary mb-2">Key Achievements</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Mobile-first design enabling checkout anywhere in store</li>
-                    <li>• Unified omnichannel experience across all touchpoints</li>
-                    <li>• Specialized workflows for jewelry, salon, and other departments</li>
+                    <li>Mobile-first design enabling checkout anywhere in store</li>
+                    <li>Unified omnichannel experience across all touchpoints</li>
+                    <li>Specialized workflows for jewelry, salon, and other departments</li>
                   </ul>
                 </div>
 
@@ -156,7 +153,7 @@ export default function CaseStudiesPage() {
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-muted-foreground">
-            © 2025 Principal UX Product Designer Portfolio. Built with Next.js and Tailwind CSS.
+            © 2025 Jared Clark. Built with Next.js and Tailwind CSS.
           </p>
         </div>
       </footer>
