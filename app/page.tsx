@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
-import { ArrowRight, Users, TrendingUp, Target, Building2, Lightbulb, Zap } from "lucide-react"
+import { Footer } from "@/components/footer"
+import { ArrowRight, Users, Target, Building2, Lightbulb, Zap } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -13,10 +14,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-balance mb-6">Strategic Design Leadership for Enterprise Scale</h1>
+          <h1 className="text-5xl font-bold text-balance mb-6">Research-driven design strategy that delivers results</h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            Principal UX Product Designer with enterprise DNA, leading Fortune 500 transformations through
-            research-to-launch pipelines and AI-enhanced design processes that deliver measurable business impact.
+            Principal designer leading enterprise teams through discovery and launch, building products that serve users and hit business targets.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" asChild>
@@ -31,42 +31,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What Makes Me Different */}
+      {/* My Approach */}
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">What Makes Me Different</h2>
+            <h2 className="text-3xl font-bold mb-4">My Approach</h2>
             <p className="text-lg text-muted-foreground text-balance">
               I lead with research, build with intention, and measure what matters. Every design decision ties back to
               user needs and business goals—no feature ships without knowing why it exists and how we'll know it worked.
             </p>
           </div>
 
-          {/* Experience Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-4">
-                <Building2 className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-3xl font-bold text-primary mb-2">10+ Years</h3>
-              <p className="text-muted-foreground">Enterprise design experience</p>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-4">
-                <Target className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-3xl font-bold text-primary mb-2">Fortune 500</h3>
-              <p className="text-muted-foreground">Companies including Walmart & JCPenney</p>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mx-auto mb-4">
-                <Users className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-3xl font-bold text-primary mb-2">100K+</h3>
-              <p className="text-muted-foreground">Users impacted by my work</p>
-            </div>
-          </div>
-
+      
+    
           {/* Key Differentiators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
@@ -238,14 +215,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-muted-foreground">
-            Made with 💙 by Jared
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

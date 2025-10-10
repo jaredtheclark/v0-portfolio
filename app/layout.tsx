@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 import { IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk } from 'next/font/google'
@@ -26,10 +27,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${_v0_fontVariables}`}>
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
