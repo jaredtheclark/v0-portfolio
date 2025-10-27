@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { ArrowLeft, Clock, Users, Smartphone, Zap, Target, TrendingUp, CheckCircle } from "lucide-react"
+import { LetsConnect } from "@/components/lets-connect"
 
 export default function JCPenneyCaseStudy() {
   return (
@@ -21,9 +22,9 @@ export default function JCPenneyCaseStudy() {
           </Button>
 
           <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">
+            <h4 className="text-4xl md:text-5xl font-bold text-balance mb-4">
               Modernizing Retail: How I Led Mobile-First POS Transformation Saving JCPenney $6.2M
-            </h1>
+            </h4>
             <p className="text-lg leading-relaxed text-muted-foreground text-balance">
               I led the design strategy for transforming JCPenney's 20-year-old point-of-sale system into a modern,
               mobile-first omnichannel platform across 31+ stores, achieving $6.2M in cost savings and enabling checkout
@@ -670,7 +671,9 @@ export default function JCPenneyCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">Change Management Requires Design Thinking Too</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    Change Management Requires Design Thinking Too
+                  </h4>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     Rolling out new technology to 31+ stores taught me that change management is itself a design
                     problem. I learned to design training materials, rollout sequences, and support documentation with
@@ -792,6 +795,9 @@ export default function JCPenneyCaseStudy() {
           </div>
         </div>
       </section>
+
+      {/* Let's Connect */}
+      <LetsConnect />
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border bg-muted/30">

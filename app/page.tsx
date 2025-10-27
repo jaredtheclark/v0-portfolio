@@ -1,12 +1,18 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { ContactModal } from "@/components/contact-modal"
 import { ArrowRight, Building2, Lightbulb, Zap } from "lucide-react"
 
 export default function HomePage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -27,7 +33,7 @@ export default function HomePage() {
                 View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" onClick={() => setIsContactModalOpen(true)}>
               Let's Connect
             </Button>
           </div>
@@ -197,11 +203,11 @@ export default function HomePage() {
             a Principal Designer who knows how to ship, let's talk.
           </p>
           <div className="flex items-center justify-center gap-4 mb-8">
-            <Button size="lg" asChild>
-              <a href="mailto:jared@example.com">Email Me</a>
+            <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
+              Send Message
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </Button>
@@ -209,6 +215,9 @@ export default function HomePage() {
           <p className="text-sm text-muted-foreground">Available for full-time roles</p>
         </div>
       </section>
+
+      {/* Added contact modal */}
+      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
 
       <Footer />
     </div>

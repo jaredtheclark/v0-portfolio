@@ -1,9 +1,12 @@
 "use client"
 
+import { useState } from "react"
+
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ContactModal } from "@/components/contact-modal"
 
 function Logo() {
   return (
@@ -19,6 +22,7 @@ function Logo() {
 
 export function Navigation() {
   const pathname = usePathname()
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
@@ -49,12 +53,13 @@ export function Navigation() {
 
             <ThemeToggle />
 
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={() => setIsContactModalOpen(true)}>
               Contact
             </Button>
           </div>
         </div>
       </div>
+      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
     </nav>
   )
 }

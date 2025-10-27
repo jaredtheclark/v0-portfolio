@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { ArrowLeft, Calendar, Users, Target, TrendingUp, CheckCircle, ArrowRight } from "lucide-react"
+import { LetsConnect } from "@/components/lets-connect"
 
 export default function CarMartCaseStudy() {
   return (
@@ -21,9 +22,9 @@ export default function CarMartCaseStudy() {
           </Button>
 
           <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">
+            <h4 className="text-4xl md:text-5xl font-bold text-balance mb-4">
               Transforming Auto Finance: How I Led a Unified Payments Platform That Tripled Autopay Adoption
-            </h1>
+            </h4>
             <p className="text-lg leading-relaxed text-muted-foreground text-balance">
               I led the strategic UX transformation of America's Car-Mart's payment infrastructure, replacing 3+ legacy
               systems with a unified platform serving 100,000+ customers across 150+ dealerships, achieving 200%
@@ -184,7 +185,9 @@ export default function CarMartCaseStudy() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-lg leading-relaxed text-muted-foreground">Complex payment processes across multiple systems</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
+                    Complex payment processes across multiple systems
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
@@ -192,15 +195,21 @@ export default function CarMartCaseStudy() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-lg leading-relaxed text-muted-foreground">No unified view of payment history</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
+                    No unified view of payment history
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-lg leading-relaxed text-muted-foreground">Difficult autopay enrollment process</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
+                    Difficult autopay enrollment process
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-lg leading-relaxed text-muted-foreground">Inconsistent experience across channels</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
+                    Inconsistent experience across channels
+                  </span>
                 </li>
               </ul>
             </div>
@@ -220,39 +229,65 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">Jobs-to-Be-Done (JTBD) Workshop Leadership</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    Jobs-to-Be-Done (JTBD) Workshop Leadership
+                  </h4>
                   <ul className="space-y-2">
-                    <li className="text-lg leading-relaxed">• I led cross-functional stakeholders through structured JTBD methodology</li>
-                    <li className="text-lg leading-relaxed">• Collaborated with Business Analysts to facilitate ORCA workshop sessions</li>
+                    <li className="text-lg leading-relaxed">
+                      • I led cross-functional stakeholders through structured JTBD methodology
+                    </li>
+                    <li className="text-lg leading-relaxed">
+                      • Collaborated with Business Analysts to facilitate ORCA workshop sessions
+                    </li>
                     <li className="text-lg leading-relaxed">
                       • <strong>Core JTBD I Identified:</strong> "When I process a payment I want a unified system to
                       handle every payment method (cash, card, ACH, etc.) So that I don't rely on multiple programs or
                       manual workarounds."
                     </li>
-                    <li className="text-lg leading-relaxed">• This insight became the strategic foundation for the entire platform redesign</li>
+                    <li className="text-lg leading-relaxed">
+                      • This insight became the strategic foundation for the entire platform redesign
+                    </li>
                   </ul>
                 </div>
 
                 <div>
                   <h4 className="text-2xl font-semibold text-primary mb-3">Custom UX Research Framework Development</h4>
                   <ul className="space-y-2">
-                    <li className="text-lg leading-relaxed">• I created a comprehensive research kit tailored to auto finance context</li>
-                    <li className="text-lg leading-relaxed">• Conducted onsite contextual inquiry at multiple dealership locations</li>
-                    <li className="text-lg leading-relaxed">• Led stakeholder interviews with lot managers, associates, and customers</li>
-                    <li className="text-lg leading-relaxed">• Facilitated user testing sessions during prototype and build phases</li>
-                    <li className="text-lg leading-relaxed">• Developed persona framework based on real customer segments and payment behaviors</li>
+                    <li className="text-lg leading-relaxed">
+                      • I created a comprehensive research kit tailored to auto finance context
+                    </li>
+                    <li className="text-lg leading-relaxed">
+                      • Conducted onsite contextual inquiry at multiple dealership locations
+                    </li>
+                    <li className="text-lg leading-relaxed">
+                      • Led stakeholder interviews with lot managers, associates, and customers
+                    </li>
+                    <li className="text-lg leading-relaxed">
+                      • Facilitated user testing sessions during prototype and build phases
+                    </li>
+                    <li className="text-lg leading-relaxed">
+                      • Developed persona framework based on real customer segments and payment behaviors
+                    </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">Strategic AI Integration & Team Enablement</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    Strategic AI Integration & Team Enablement
+                  </h4>
                   <ul className="space-y-2">
-                    <li className="text-lg leading-relaxed">• I pioneered generative AI adoption to accelerate research synthesis by 40%</li>
-                    <li className="text-lg leading-relaxed">• Developed AI-assisted wireframing process that maintained design quality standards</li>
+                    <li className="text-lg leading-relaxed">
+                      • I pioneered generative AI adoption to accelerate research synthesis by 40%
+                    </li>
+                    <li className="text-lg leading-relaxed">
+                      • Developed AI-assisted wireframing process that maintained design quality standards
+                    </li>
                     <li className="text-lg leading-relaxed">
                       • Mentored senior designer in AI tool adoption, aligning with company leadership initiatives
                     </li>
-                    <li className="text-lg leading-relaxed">• Created quality safeguards ensuring AI outputs met enterprise standards</li>
+                    <li className="text-lg leading-relaxed">
+                      • Created quality safeguards ensuring AI outputs met enterprise standards
+                    </li>
                   </ul>
                 </div>
               </CardContent>
@@ -273,7 +308,9 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-2">Cross-Functional Collaboration & Influence</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-2">
+                    Cross-Functional Collaboration & Influence
+                  </h4>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     I translated JTBD insights into actionable user stories that development teams could execute. Built
                     comprehensive product backlog in Azure DevOps with embedded design links and acceptance criteria.
@@ -489,7 +526,9 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">AI as Strategic Accelerator, Not Replacement</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    AI as Strategic Accelerator, Not Replacement
+                  </h4>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     Successfully integrating AI tools into the design process required establishing clear quality gates
                     and human oversight. I learned that AI excels at accelerating initial exploration and synthesis, but
@@ -500,7 +539,9 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">JTBD as Foundation for Cross-Functional Alignment</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    JTBD as Foundation for Cross-Functional Alignment
+                  </h4>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     Leading the JTBD workshop revealed how powerful this methodology is for creating shared
                     understanding across business, technology, and design teams. The core job statement we identified
@@ -518,7 +559,9 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">Translating Design into Development Language</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    Translating Design into Development Language
+                  </h4>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     One of the most impactful aspects of this project was learning to bridge the gap between design
                     artifacts and development execution. By embedding design links directly into Azure DevOps user
@@ -528,7 +571,9 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-semibold text-primary mb-3">Stakeholder Management in Regulated Industries</h4>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
+                    Stakeholder Management in Regulated Industries
+                  </h4>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     Working in auto finance required balancing user needs with strict compliance requirements and
                     business constraints. I learned that successful stakeholder management means understanding each
@@ -641,6 +686,9 @@ export default function CarMartCaseStudy() {
           </div>
         </div>
       </section>
+
+      {/* Let's Connect */}
+      <LetsConnect />
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border">
