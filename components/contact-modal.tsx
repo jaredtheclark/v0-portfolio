@@ -37,15 +37,17 @@ export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps)
     setSubmitStatus("idle")
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`)
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`,
-      )
-      const mailtoLink = `mailto:jared@example.com?subject=${subject}&body=${body}`
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-      // Open mailto link
-      window.location.href = mailtoLink
+      if (!response.ok) {
+        throw new Error("Failed to send message")
+      }
 
       setSubmitStatus("success")
       setFormData({ name: "", email: "", company: "", message: "" })
@@ -53,8 +55,10 @@ export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps)
       // Close modal after a short delay
       setTimeout(() => {
         onOpenChange?.(false)
+        setSubmitStatus("idle")
       }, 2000)
     } catch (error) {
+      console.error("[v0] Form submission error:", error)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -130,13 +134,13 @@ export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps)
 
           {submitStatus === "success" && (
             <div className="p-3 bg-primary/10 border border-primary/20 rounded-lg text-sm">
-              Your email client should open with the message. If not, please email me directly.
+              Message sent successfully! I'll get back to you soon.
             </div>
           )}
 
           {submitStatus === "error" && (
             <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg text-sm">
-              There was an error. Please try again or email me directly.
+              Failed to send message. Please try again or contact me directly.
             </div>
           )}
 
