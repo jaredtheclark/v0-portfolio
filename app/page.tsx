@@ -19,15 +19,15 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display text-balance mb-6 uppercase tracking-tight">
-            Research-driven design strategy that delivers results
+        <div className="max-w-6xl mx-auto text-left">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 uppercase tracking-tight">
+            Connecting User Research to Business Imapct
           </h1>
-          <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto">
             Principal designer leading enterprise teams through discovery and launch, building products that serve users
             and hit business targets.
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-left gap-4">
             <Button size="lg" asChild>
               <Link href="/case-studies">
                 View Case Studies <ArrowRight className="ml-2 h-4 w-4" />

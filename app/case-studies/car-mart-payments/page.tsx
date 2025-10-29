@@ -85,21 +85,9 @@ export default function CarMartCaseStudy() {
                   <span className="text-muted-foreground">Dealerships</span>
                   <span className="font-medium">150+ across 12 states</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Active Customers</span>
-                  <span className="font-medium">100,000+</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Q3 Revenue</span>
-                  <span className="font-medium">$325.7M</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Associates</span>
-                  <span className="font-medium">2,200+</span>
-                </div>
                 <div className="mt-4 pt-3 border-t border-border">
                   <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Engagement:</strong> Contract Principal UX Architect via
+                    <strong className="text-foreground">Engagement:</strong> Principal UX Architect via
                     Kitestring
                   </p>
                 </div>
@@ -121,19 +109,23 @@ export default function CarMartCaseStudy() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-primary" />
-                    Business Analysts (JTBD workshops)
+                    Business Analysts
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-primary" />
-                    Technology Architects (system integration)
+                    Technology Architects
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-primary" />
-                    Senior Designers (I mentored on AI tools)
+                    Senior Designers
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-primary" />
-                    Development Team (Azure DevOps collaboration)
+                    Development Team
+                  </li>
+                   <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary" />
+                    Program Director
                   </li>
                 </ul>
               </CardContent>
@@ -161,14 +153,8 @@ export default function CarMartCaseStudy() {
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-lg leading-relaxed text-muted-foreground">
-                    <strong>Poor Customer Experience:</strong> Manual workarounds, inconsistent interfaces, limited
+                    <strong> Associate Experience:</strong> Manual workarounds, inconsistent interfaces, limited
                     payment options
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-lg leading-relaxed text-muted-foreground">
-                    <strong>Compliance Risk:</strong> Manual fund routing to bond groups, NACHA liability exposure
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
