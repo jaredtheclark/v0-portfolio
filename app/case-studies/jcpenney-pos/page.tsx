@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { ArrowLeft, Clock, Users, Smartphone, Zap, Target, TrendingUp, CheckCircle } from "lucide-react"
 import { LetsConnect } from "@/components/lets-connect"
+import { Footer } from "@/components/footer"
 
 export default function JCPenneyCaseStudy() {
   return (
@@ -799,15 +800,7 @@ export default function JCPenneyCaseStudy() {
       {/* Let's Connect */}
       <LetsConnect />
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg leading-relaxed text-muted-foreground text-balance">
-            This case study demonstrates enterprise retail transformation expertise, showcasing mobile-first design
-            strategy, hardware-software integration, and measurable business impact through strategic UX leadership.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

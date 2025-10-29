@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import { ArrowRight, TrendingUp, DollarSign, Users, Clock } from "lucide-react"
 
 export default function CaseStudiesPage() {
@@ -35,7 +36,8 @@ export default function CaseStudiesPage() {
                       Doubling autopay enrollment while simplifying payments for 100K users
                     </CardTitle>
                     <CardDescription>
-                      Doubled autopay adoption and replaced 3 fragmented systems with a single platform for 100K customers—all in 4 months.
+                      Doubled autopay adoption and replaced 3 fragmented systems with a single platform for 100K
+                      customers—all in 4 months.
                     </CardDescription>
                   </div>
                 </div>
@@ -71,7 +73,9 @@ export default function CaseStudiesPage() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div>
-                    <CardTitle className="text-xl mb-2">Getting checkout off the counter and onto the sales floor</CardTitle>
+                    <CardTitle className="text-xl mb-2">
+                      Getting checkout off the counter and onto the sales floor
+                    </CardTitle>
                     <CardDescription>
                       Transformed 20-year-old point-of-sale system into modern, omnichannel experience across 31+ stores
                       with mobile checkout capabilities.
@@ -90,7 +94,6 @@ export default function CaseStudiesPage() {
                     <span className="text-sm font-medium">50% faster checkout</span>
                   </div>
                 </div>
-
 
                 <Button asChild className="w-full">
                   <Link href="/case-studies/jcpenney-pos">
@@ -129,13 +132,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-muted-foreground">
-            © 2025 Jared Clark. Built with Next.js and Tailwind CSS.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

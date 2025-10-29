@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { ArrowLeft, Calendar, Users, Target, TrendingUp, CheckCircle, ArrowRight } from "lucide-react"
 import { LetsConnect } from "@/components/lets-connect"
+import { Footer } from "@/components/footer"
 
 export default function CarMartCaseStudy() {
   return (
@@ -87,8 +88,7 @@ export default function CarMartCaseStudy() {
                 </div>
                 <div className="mt-4 pt-3 border-t border-border">
                   <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Engagement:</strong> Principal UX Architect via
-                    Kitestring
+                    <strong className="text-foreground">Engagement:</strong> Principal UX Architect via Kitestring
                   </p>
                 </div>
               </CardContent>
@@ -123,7 +123,7 @@ export default function CarMartCaseStudy() {
                     <CheckCircle className="h-4 w-4 text-primary" />
                     Development Team
                   </li>
-                   <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-primary" />
                     Program Director
                   </li>
@@ -153,8 +153,8 @@ export default function CarMartCaseStudy() {
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-lg leading-relaxed text-muted-foreground">
-                    <strong> Associate Experience:</strong> Manual workarounds, inconsistent interfaces, limited
-                    payment options
+                    <strong> Associate Experience:</strong> Manual workarounds, inconsistent interfaces, limited payment
+                    options
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -676,16 +676,7 @@ export default function CarMartCaseStudy() {
       {/* Let's Connect */}
       <LetsConnect />
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg leading-relaxed text-muted-foreground text-balance">
-            This case study demonstrates comprehensive UX leadership in a complex, regulated industry environment,
-            showcasing strategic thinking, cross-functional influence, and measurable business impact essential for
-            Principal-level positions.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -21,7 +21,7 @@ export default function HomePage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 uppercase tracking-tight">
-            Connecting User Research to Business Imapct
+            Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto">
             Principal designer leading enterprise teams through discovery and launch, building products that serve users
@@ -44,10 +44,9 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight">My Approach</h2>
-            <p className="text-lg text-muted-foreground text-balance">
-              I lead with research, build with intention, and measure what matters. Every design decision ties back to
-              user needs and business goals. Features ship with clear purpose and measurable success criteria.
+            <h3 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight text-left">Approach</h3>
+            <p className="text-lg text-muted-foreground text-balance text-left">
+              I lead with research, build with intention, and measure what matters. Every design decision ties back to user needs and business goals. Features ship with clear purpose and measurable success criteria.
             </p>
           </div>
 
@@ -55,46 +54,42 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-                  <Building2 className="h-6 w-6 text-primary" />
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg mb-4 text-[rgba(35,35,31,1)]">
+                  <Building2 className="h-6 w-6 text-stone-600" />
                 </div>
                 <CardTitle>Designing at Scale</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  I've spent my career designing for complex organizations where nothing is simple. I navigate competing
-                  priorities, work within legacy system constraints, and design for diverse user bases without
-                  sacrificing brand consistency or user experience.
+                  In large organizations where nothing is simple, I navigate competing priorities, work within legacy system constraints, and design systems for diverse user bases.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg mb-4">
                   <Lightbulb className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle>Research-to-Launch</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  I lead the entire process from user research and business alignment through implementation and
-                  measurement.
+                  I lead the entire process from user research and business alignment through implementation and measurement.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
+                <div className="flex items-center justify-center w-12 h-12  rounded-lg mb-4">
                   <Zap className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle>AI Integration</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Leading teams through AI-enhanced design processes that increase velocity while improving quality.
-                  I've developed frameworks for designers to leverage AI effectively.
+                  Leading teams through AI-enhanced design processes that increase velocity while improving quality. I've developed frameworks for designers to leverage AI effectively.
                 </p>
               </CardContent>
             </Card>
@@ -106,8 +101,8 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight">Recent Work</h2>
-            <p className="text-lg text-muted-foreground">Case studies about recent projects I've worked on.</p>
+            <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight text-left">Selected Works</h2>
+            <p className="text-lg text-muted-foreground text-left">Case Studies of recent projects I worked on. To learn more about any project, or to view a protected project reach out on LinkedIn or email.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
