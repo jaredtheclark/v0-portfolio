@@ -30,7 +30,6 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="text-foreground hover:text-primary transition-colors flex items-center gap-3">
             <Logo />
-            <span className="text-xl font-bold">Jared Clark</span>
           </Link>
 
           <div className="flex items-center gap-6">
