@@ -25,15 +25,15 @@ export function Navigation() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 py-4">
+    <nav className="sticky top-0 z-50 px-6 bg-background/80 backdrop-blur-sm border-b border-border">
+      <div className="max-w-6xl mx-auto py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-foreground hover:text-primary transition-colors flex items-center gap-3">
             <Logo />
           </Link>
 
           <div className="flex items-center gap-6">
-            <Link
+            {/* <Link
               href="/"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 pathname === "/" ? "text-primary" : "text-muted-foreground"
@@ -48,13 +48,13 @@ export function Navigation() {
               }`}
             >
               Case Studies
-            </Link>
+            </Link> */}
 
             <ThemeToggle />
 
-            <Button variant="outline" size="sm" onClick={() => setIsContactModalOpen(true)}>
+            {/* <Button variant="outline" size="sm" onClick={() => setIsContactModalOpen(true)}>
               Contact
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
