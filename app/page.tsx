@@ -7,6 +7,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactModal } from "@/components/contact-modal"
 import { CaseStudies } from "@/components/case-studies"
+import { ProjectVideo } from "@/components/project-video"
 import { ArrowRight, Building2, Lightbulb, Zap } from "lucide-react"
 
 export default function HomePage() {
@@ -60,34 +61,43 @@ export default function HomePage() {
             {/* America's Car Mart */}
             <div className="group block">
               <div className="mb-4">
-                <h4 className="mb-1">
-                  America's Car Mart
-                  </h4>
-                <p className="text-muted-foreground">
-                  UX Research | Team Leadership
-                </p>
+                <h4 className="mb-1">America's Car Mart</h4>
+                <p className="text-muted-foreground">UX Research | Team Leadership</p>
               </div>
-              <div className="aspect-video w-full bg-[#2563EB] rounded-lg overflow-hidden transition-all group-hover:shadow-lg group-hover:opacity-90" />
+              <ProjectVideo
+                videoSrc="/videos/car-mart.mp4"
+                posterSrc="/images/posters/car-mart.png"
+                alt="America's Car Mart project demo"
+                fallbackColor="#2563EB"
+              />
             </div>
 
             {/* Computer Care */}
-            <div className="group block">
+            {/* <div className="group block">
               <div className="mb-4">
-     
                 <h4 className="mb-1">Computer Care</h4>
                 <p className="text-muted-foreground">AI Design Systems | UX Engineering</p>
               </div>
-              <div className="aspect-video w-full bg-[#333333] rounded-lg overflow-hidden" />
-            </div>
+              <ProjectVideo
+                videoSrc="/videos/computer-care.mp4"
+                posterSrc="/images/posters/computer-care.jpg"
+                alt="Computer Care project demo"
+                fallbackColor="#333333"
+              />
+            </div> */}
 
             {/* Follett Corporation */}
             <div className="group block">
               <div className="mb-4">
-         
                 <h4 className="mb-1">Follett Corporation</h4>
                 <p className="text-muted-foreground">Retail POS Experience Design</p>
               </div>
-              <div className="aspect-video w-full bg-[#B48140] rounded-lg overflow-hidden" />
+              <ProjectVideo
+                videoSrc="/videos/follett.mp4"
+                posterSrc="/images/posters/follett.png"
+                alt="Follett Corporation project demo"
+                fallbackColor="#204A65"
+              />
             </div>
 
             {/* JCPenney */}
@@ -96,7 +106,12 @@ export default function HomePage() {
                 <h4 className="mb-1">JCPenney</h4>
                 <p className="text-muted-foreground">Retail POS Transformation</p>
               </div>
-              <div className="aspect-video w-full bg-[#E5E5E5] rounded-lg overflow-hidden transition-all group-hover:shadow-lg group-hover:opacity-90" />
+              <ProjectVideo
+                videoSrc="/videos/jcpenney.mp4"
+                posterSrc="/images/posters/jcpenney.png"
+                alt="JCPenney project demo"
+                fallbackColor="#E5E5E5"
+              />
             </div>
 
             {/* Walmart Information Security */}
@@ -105,37 +120,54 @@ export default function HomePage() {
                 <h4 className="mb-1">Walmart Information Security</h4>
                 <p className="text-muted-foreground">Design System Governance | Developer Collaboration</p>
               </div>
-              <div className="aspect-video w-full bg-[#1F2937] rounded-lg overflow-hidden" />
+              <ProjectVideo
+                videoSrc="/videos/walmart-infosec.mp4"
+                posterSrc="/images/posters/walmart-infosec.jpg"
+                alt="Walmart Information Security project demo"
+                fallbackColor="#1F2937"
+              />
             </div>
 
             {/* Walmart Legal Themis */}
             <div className="group block">
               <div className="mb-4">
-       
                 <h4 className="mb-1">Walmart Legal Themis</h4>
                 <p className="text-muted-foreground">Team Leadership | Application Design Prototyping</p>
               </div>
-              <div className="aspect-video w-full bg-[#1D4ED8] rounded-lg overflow-hidden" />
+              <ProjectVideo
+                videoSrc="/videos/walmart-themis.mp4"
+                posterSrc="/images/posters/walmart-themis.png"
+                alt="Walmart Legal Themis project demo"
+                fallbackColor="#1D4ED8"
+              />
             </div>
 
             {/* Walmart Data Ventures Luminate */}
             <div className="group block">
               <div className="mb-4">
-     
                 <h4 className="mb-1">Walmart Data Ventures Luminate</h4>
                 <p className="text-muted-foreground">Design Ops | Prototyping</p>
               </div>
-              <div className="aspect-video w-full bg-[#E5E5E5] rounded-lg overflow-hidden" />
+              <ProjectVideo
+                videoSrc="/videos/walmart-luminate.mp4"
+                posterSrc="/images/posters/walmart-luminate.png"
+                alt="Walmart Data Ventures Luminate project demo"
+                fallbackColor="#E5E5E5"
+              />
             </div>
 
             {/* Handled Home */}
             <div className="group block">
               <div className="mb-4">
-     
                 <h4 className="mb-1">Handled Home</h4>
                 <p className="text-muted-foreground">Residential Moving & Home Inventory Management</p>
               </div>
-              <div className="aspect-video w-full bg-[#F97316] rounded-lg overflow-hidden" />
+              <ProjectVideo
+                videoSrc="/videos/handled-home.mp4"
+                posterSrc="/images/posters/handled-home.png"
+                alt="Handled Home project demo"
+                fallbackColor="#F97316"
+              />
             </div>
           </div>
         </div>
