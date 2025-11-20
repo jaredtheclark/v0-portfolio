@@ -11,9 +11,9 @@
   --card-foreground: oklch(0.2868 0.0084 75.2489);
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.2868 0.0084 75.2489);
-  --primary: oklch(0.5452 0.0520 94.0565);
+  --primary: oklch(19.796% 0.02472 45.59);
   --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.7423 0.1254 83.7643);
+  --secondary: oklch(31.757% 0.0502 84.765);
   --secondary-foreground: oklch(1.0000 0 0);
   --muted: oklch(0.9219 0 0);
   --muted-foreground: oklch(0.4625 0.0095 73.6478);
@@ -60,7 +60,7 @@
 /* Dark theme with dramatic black background and white text */
 .dark {
  --background: oklch(0.2404 0.0064 78.2033);
-  --foreground: oklch(0.9551 0 0);
+  --foreground: oklch(90.359% 0.05669 92.891);
   --card: oklch(0.2715 0.0094 67.4155);
   --card-foreground: oklch(0.9551 0 0);
   --popover: oklch(0.2868 0.0084 75.2489);
@@ -182,7 +182,6 @@
   /* Add display font utility class for headers using BBH Sans Bartle */
   .font-display {
     font-family: var(--font-bbh-sans-bartle), var(--font-golos-text), system-ui, sans-serif;
-    font-weight: 700;
     letter-spacing: -0.02em;
   }
 
