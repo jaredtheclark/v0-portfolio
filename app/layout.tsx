@@ -25,6 +25,7 @@ const bbhSansBartle = localFont({
 export const metadata: Metadata = {
   title: "Jared Clark | Principal Product Designer",
   description: "Principal UX Product Designer specializing in enterprise fintech transformation.",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

@@ -121,7 +121,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground">Design System Governance | Developer Collaboration</p>
               </div>
               <ProjectVideo
-                videoSrc="/videos/walmart-infosec.mp4"
+                videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/fVfPvmhLT9t5NVNli3WR3p/public/videos/walmart-infosec.mp4"
                 posterSrc="/images/posters/walmart-infosec.jpg"
                 alt="Walmart Information Security project demo"
                 fallbackColor="#1F2937"
@@ -149,7 +149,7 @@ export default function HomePage() {
                 <p className="text-muted-foreground">Design Ops | Prototyping</p>
               </div>
               <ProjectVideo
-                videoSrc="/videos/walmart-luminate.mp4"
+                videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/bAGU-KMJYTvs65GPnkfgFP/public/videos/walmart-luminate.mp4"
                 posterSrc="/images/posters/walmart-luminate.png"
                 alt="Walmart Data Ventures Luminate project demo"
                 fallbackColor="#E5E5E5"
