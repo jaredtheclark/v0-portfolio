@@ -22,13 +22,11 @@ export default function HomePage() {
             Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
-            Product Design Leader specializing in enterprise fintech transformation. 10+ years driving measurable
-            business outcomes through strategic design leadership at Fortune 500 retailers and financial services
-            companies.
+            I'm a Product Designer focused on business outcomes. I help teams solve the right problems, make strategic decisions, and ship design systems that scale.
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
-            <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
-              Get in Touch
+            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer">
+              Say Hello
             </Button>
             <LinkedInButton />
           </div>
@@ -42,8 +40,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 animate-slide-up">
             <h2 className="text-3xl font-display mb-2 uppercase tracking-tight text-left">Recent Projects</h2>
-            <p className="text-lg text-muted-foreground text-left max-w-3xl">
-              To learn more about any project and see a case study, reach out on LinkedIn or email.
+            <p className="text-lg text-muted-foreground text-left">
+              To learn more about any project and see a case study, reach out on LinkedIn or contact me.
             </p>
           </div>
 
@@ -165,9 +163,9 @@ export default function HomePage() {
 
       {/* Additional Works */}
 
-      {/* Get In Touch */}
+      {/* Say Hello */}
       <section className="py-20 px-6 border-t border-border-50">
-        <div className="max-w-4xl mx-auto text-left">
+        <div className="max-w-6xl mx-auto text-left">
           <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight animate-fade-in">
             Let's Connect
           </h2>
@@ -176,8 +174,8 @@ export default function HomePage() {
             ships measurable outcomes, let's talk.
           </p>
           <div className="flex items-center gap-4 mb-8 animate-fade-in-delay-2 justify-start">
-            <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
-              Get in Touch
+            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer">
+              Say Hello
             </Button>
             <LinkedInButton />
           </div>
