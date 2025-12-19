@@ -10,7 +10,7 @@ This is a portfolio website for a Principal UX Product Designer, built with Next
 
 ## Development Commands
 
-```bash
+\`\`\`bash
 # Install dependencies (uses Yarn)
 yarn install
 
@@ -25,7 +25,7 @@ yarn start
 
 # Run linting
 yarn lint
-```
+\`\`\`
 
 ## Tech Stack
 
@@ -41,7 +41,7 @@ yarn lint
 
 ### File Structure
 
-```
+\`\`\`
 app/
 ├── layout.tsx              # Root layout with metadata and analytics
 ├── page.tsx                # Homepage with hero, metrics, case studies
@@ -57,7 +57,7 @@ components/
 
 lib/
 └── utils.ts                # Utility functions (cn helper)
-```
+\`\`\`
 
 ### Path Aliases
 
@@ -98,10 +98,10 @@ This configuration suggests the project prioritizes rapid iteration (common for 
 
 This project uses shadcn/ui. To add new components:
 
-```bash
+\`\`\`bash
 # Example: Add a new component
 npx shadcn@latest add [component-name]
-```
+\`\`\`
 
 Configuration is in `components.json`:
 - Style: `new-york`
@@ -224,12 +224,12 @@ Original case study content stored in:
 ### SEO & Metadata
 
 Each page should include:
-```typescript
+\`\`\`typescript
 export const metadata: Metadata = {
   title: "Page Title | Principal UX Product Designer",
   description: "Concise description with key outcomes and metrics",
 }
-```
+\`\`\`
 
 **Best Practices**:
 - Include role/title in page titles
@@ -284,9 +284,9 @@ Edit `app/page.tsx` - Hero section includes name, title, value proposition, and 
 Edit `app/globals.css` - All design tokens in `@theme inline` block using OKLCH
 
 ### Add UI Component
-```bash
+\`\`\`bash
 npx shadcn@latest add [component]
-```
+\`\`\`
 Then customize in `components/ui/[component].tsx`
 
 ### Update Navigation

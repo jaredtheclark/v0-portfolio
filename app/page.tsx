@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactModal } from "@/components/contact-modal"
-import { ProjectVideo } from "@/components/project-video"
 import { LinkedInButton } from "@/components/linkedin-button"
+import { ProjectCard } from "@/components/project-card"
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -22,7 +22,8 @@ export default function HomePage() {
             Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
-            I'm a Product Designer focused on business outcomes. I help teams solve the right problems, make strategic decisions, and ship design systems that scale.
+            I'm a Product Designer focused on business outcomes. I help teams solve the right problems, make strategic
+            decisions, and ship design systems that scale.
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer">
@@ -47,116 +48,67 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* America's Car Mart */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
-              <div className="mb-4">
-                <h4 className="mb-1">America's Car Mart</h4>
-                <p className="text-muted-foreground">UX Research | Team Leadership</p>
-              </div>
-              <ProjectVideo
-                videoSrc="/videos/car-mart.mp4"
-                posterSrc="/images/posters/car-mart.png"
-                alt="America's Car Mart project demo"
-                fallbackColor="#2563EB"
-              />
-            </div>
-
-            {/* Computer Care */}
-            {/* <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
-              <div className="mb-4">
-                <h4 className="mb-1">Computer Care</h4>
-                <p className="text-muted-foreground">AI Design Systems | UX Engineering</p>
-              </div>
-              <ProjectVideo
-                videoSrc="/videos/computer-care.mp4"
-                posterSrc="/images/posters/computer-care.jpg"
-                alt="Computer Care project demo"
-                fallbackColor="#333333"
-              />
-            </div> */}
+            <ProjectCard
+              title="America's Car Mart"
+              description="UX Research | Team Leadership"
+              videoSrc="/videos/car-mart.mp4"
+              posterSrc="/images/posters/car-mart.png"
+              fallbackColor="#2563EB"
+            />
 
             {/* Follett Corporation */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-2">
-              <div className="mb-4">
-                <h4 className="mb-1">Follett Corporation</h4>
-                <p className="text-muted-foreground">Service Design | Point of Sale</p>
-              </div>
-              <ProjectVideo
-                videoSrc="/videos/follett.mp4"
-                posterSrc="/images/posters/follett.png"
-                alt="Follett Corporation project demo"
-                fallbackColor="#204A65"
-              />
-            </div>
+            <ProjectCard
+              title="Follett Corporation"
+              description="Service Design | Point of Sale"
+              videoSrc="/videos/follett.mp4"
+              posterSrc="/images/posters/follett.png"
+              fallbackColor="#204A65"
+            />
 
             {/* JCPenney */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
-              <div className="mb-4">
-                <h4 className="mb-1">JCPenney</h4>
-                <p className="text-muted-foreground">Design Systems | Point of Sale</p>
-              </div>
-              <ProjectVideo
-                videoSrc="/videos/jcpenney.mp4"
-                posterSrc="/images/posters/jcpenney.png"
-                alt="JCPenney project demo"
-                fallbackColor="#E5E5E5"
-              />
-            </div>
+            <ProjectCard
+              title="JCPenney"
+              description="Design Systems | Point of Sale"
+              videoSrc="/videos/jcpenney.mp4"
+              posterSrc="/images/posters/jcpenney.png"
+              fallbackColor="#E5E5E5"
+            />
 
             {/* Walmart Information Security */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-2">
-              <div className="mb-4">
-                <h4 className="mb-1">Walmart Information Security</h4>
-                <p className="text-muted-foreground">Design System Governance | User Research</p>
-              </div>
-              <ProjectVideo
-                videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/fVfPvmhLT9t5NVNli3WR3p/public/videos/walmart-infosec.mp4"
-                posterSrc="/images/posters/walmart-infosec.jpg"
-                alt="Walmart Information Security project demo"
-                fallbackColor="#1F2937"
-              />
-            </div>
+            <ProjectCard
+              title="Walmart Information Security"
+              description="Design System Governance | User Research"
+              videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/fVfPvmhLT9t5NVNli3WR3p/public/videos/walmart-infosec.mp4"
+              posterSrc="/images/posters/walmart-infosec.jpg"
+              fallbackColor="#1F2937"
+            />
 
             {/* Walmart Legal Themis */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-3">
-              <div className="mb-4">
-                <h4 className="mb-1">Walmart Legal Themis</h4>
-                <p className="text-muted-foreground">Project Team Leadership | Prototyping</p>
-              </div>
-              <ProjectVideo
-                videoSrc="/videos/walmart-themis.mp4"
-                posterSrc="/images/posters/walmart-themis.png"
-                alt="Walmart Legal Themis project demo"
-                fallbackColor="#1D4ED8"
-              />
-            </div>
+            <ProjectCard
+              title="Walmart Legal Themis"
+              description="Project Team Leadership | Prototyping"
+              videoSrc="/videos/walmart-themis.mp4"
+              posterSrc="/images/posters/walmart-themis.png"
+              fallbackColor="#1D4ED8"
+            />
 
             {/* Walmart Data Ventures Luminate */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
-              <div className="mb-4">
-                <h4 className="mb-1">Walmart Data Ventures Luminate</h4>
-                <p className="text-muted-foreground">Data Visualization | Prototyping</p>
-              </div>
-              <ProjectVideo
-                videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/bAGU-KMJYTvs65GPnkfgFP/public/videos/walmart-luminate.mp4"
-                posterSrc="/images/posters/walmart-luminate.png"
-                alt="Walmart Data Ventures Luminate project demo"
-                fallbackColor="#E5E5E5"
-              />
-            </div>
+            <ProjectCard
+              title="Walmart Data Ventures Luminate"
+              description="Data Visualization | Prototyping"
+              videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/bAGU-KMJYTvs65GPnkfgFP/public/videos/walmart-luminate.mp4"
+              posterSrc="/images/posters/walmart-luminate.png"
+              fallbackColor="#E5E5E5"
+            />
 
             {/* Handled Home */}
-            <div className="group block hover-scale transition-smooth animate-fade-in-delay-2">
-              <div className="mb-4">
-                <h4 className="mb-1">Handled Home</h4>
-                <p className="text-muted-foreground">Design Systems | Consumer App Design</p>
-              </div>
-              <ProjectVideo
-                videoSrc="/videos/handled-home.mp4"
-                posterSrc="/images/posters/handled-home.png"
-                alt="Handled Home project demo"
-                fallbackColor="#F97316"
-              />
-            </div>
+            <ProjectCard
+              title="Handled Home"
+              description="Design Systems | Consumer App Design"
+              videoSrc="/videos/handled-home.mp4"
+              posterSrc="/images/posters/handled-home.png"
+              fallbackColor="#F97316"
+            />
           </div>
         </div>
       </section>

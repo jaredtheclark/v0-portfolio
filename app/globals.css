@@ -226,14 +226,7 @@
     opacity: 0;
   }
 
-  /* Scale up hover effect */
-  .hover-scale {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-scale:hover {
-    transform: scale(1.02);
-  }
+  /* Removed hover-scale animation classes */
 
   /* Smooth transitions */
   .transition-smooth {
