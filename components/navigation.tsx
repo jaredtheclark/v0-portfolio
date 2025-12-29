@@ -50,6 +50,15 @@ export function Navigation() {
               Case Studies
             </Link> */}
 
+            <Link
+              href="/resume"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                pathname.includes("/resume") ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              Resumé
+            </Link>
+
             <ThemeToggle />
 
             {/* <Button variant="outline" size="sm" onClick={() => setIsContactModalOpen(true)}>
