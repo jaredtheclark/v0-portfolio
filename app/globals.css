@@ -36,9 +36,6 @@
   --sidebar-accent-foreground: oklch(0.9551 0 0);
   --sidebar-border: oklch(0.3776 0.0100 73.5967);
   --sidebar-ring: oklch(0.6611 0.1160 185.9407);
-  --font-sans: Golos Text, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: serif;
-  --font-mono: Roboto Mono;
   --radius: 0.3rem;
   --shadow-x: 0px;
   --shadow-y: 4px;
@@ -91,9 +88,6 @@
   --sidebar-accent-foreground: oklch(0.9551 0 0);
   --sidebar-border: oklch(0.3317 0.0089 67.5123);
   --sidebar-ring: oklch(0.6611 0.1160 185.9407);
-  --font-sans: Golos Text, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: serif;
-  --font-mono: Roboto Mono;
   --radius: 0.3rem;
   --shadow-x: 0px;
   --shadow-y: 4px;
@@ -145,9 +139,10 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-serif: var(--font-serif);
+  --font-sans: var(--font-golos-text), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-mono: var(--font-roboto-mono), 'Roboto Mono', ui-monospace, monospace;
+  --font-serif: ui-serif, serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -186,13 +181,37 @@
     letter-spacing: -0.02em;
   } */
 
-  /* Apply display font to all heading elements */
-  h1,
-  h2,
+  /* Apply Poppins font to all heading elements with Figma-specified styles */
+  h1 {
+    font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.48px;
+  }
+
+  h2 {
+    font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.3px;
+  }
+
   h3 {
-    font-family: var(--font-golos-text), system-ui, sans-serif;
-    letter-spacing: -0.02em;
-    font-weight: 700;
+    font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+  }
+
+  h4 {
+    font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
   }
 }
 

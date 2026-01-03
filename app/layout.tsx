@@ -7,7 +7,7 @@ import localFont from "next/font/local"
 
 import "./globals.css"
 
-import { Golos_Text, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk } from 'next/font/google'
+import { Golos_Text, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk, Poppins as V0_Font_Poppins, Roboto_Mono } from 'next/font/google'
 
 // Initialize fonts
 const _ibmPlexSerif = V0_Font_IBM_Plex_Serif({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700"] })
@@ -18,6 +18,18 @@ const golosText = Golos_Text({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-golos-text",
+})
+
+const poppins = V0_Font_Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-poppins",
+})
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto-mono",
 })
 
 const bbhSansBartle = localFont({
@@ -39,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${golosText.variable} ${bbhSansBartle.variable}`}>
+      <body className={`font-sans ${golosText.variable} ${bbhSansBartle.variable} ${poppins.variable} ${robotoMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>{children}</Suspense>
           <Analytics />
