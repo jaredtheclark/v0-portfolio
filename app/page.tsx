@@ -19,11 +19,10 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-transparent">
         <div className="max-w-6xl mx-auto text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 tracking-tight animate-fade-in">
-            Hi, I'm Jared 🤙
+            Hi, I'm Jared. I help teams solve the right problems, make strategic decisions, and ship design systems that scale.
           </h1>
-          <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
-            I'm a Product Designer focused on business outcomes. I help teams solve the right problems, make strategic
-            decisions, and ship design systems that scale.
+          <p className="font-mono text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
+            Design Systems | UX Research | Strategic Partner
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer">
