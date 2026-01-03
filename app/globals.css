@@ -175,12 +175,6 @@
     letter-spacing: var(--tracking-normal);
   }
 
-  /* Add display font utility class for headers using BBH Sans Bartle */
-  /* .font-display {
-    font-family: var(--font-bbh-sans-bartle), var(--font-golos-text), system-ui, sans-serif;
-    letter-spacing: -0.02em;
-  } */
-
   /* Apply Poppins font to all heading elements with Figma-specified styles */
   h1 {
     font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;

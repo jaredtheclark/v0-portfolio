@@ -3,16 +3,10 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
-import localFont from "next/font/local"
 
 import "./globals.css"
 
-import { Golos_Text, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk, Poppins as V0_Font_Poppins, Roboto_Mono } from 'next/font/google'
-
-// Initialize fonts
-const _ibmPlexSerif = V0_Font_IBM_Plex_Serif({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700"] })
-const _spaceMono = V0_Font_Space_Mono({ subsets: ['latin'], weight: ["400","700"] })
-const _spaceGrotesk = V0_Font_Space_Grotesk({ subsets: ['latin'], weight: ["300","400","500","600","700"] })
+import { Golos_Text, Poppins as V0_Font_Poppins, Roboto_Mono } from 'next/font/google'
 
 const golosText = Golos_Text({
   subsets: ["latin"],
@@ -32,12 +26,6 @@ const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
 })
 
-const bbhSansBartle = localFont({
-  src: "./fonts/BBHSansBartle-Regular.ttf",
-  variable: "--font-bbh-sans-bartle",
-  display: "swap",
-})
-
 export const metadata: Metadata = {
   title: "Jared Clark | Principal Product Designer",
   description: "Principal UX Product Designer specializing in enterprise fintech transformation.",
@@ -51,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${golosText.variable} ${bbhSansBartle.variable} ${poppins.variable} ${robotoMono.variable}`}>
+      <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>{children}</Suspense>
           <Analytics />
