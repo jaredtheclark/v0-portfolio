@@ -27,13 +27,13 @@ Video files are too large to commit to Git repositories. Vercel Blob provides:
 ### Step 3: Update the Code
 Replace the local video path with the Blob URL in `app/page.tsx`:
 
-```tsx
+\`\`\`tsx
 // ❌ Before (won't work)
 videoSrc="/videos/car-mart.mp4"
 
 // ✅ After (works!)
 videoSrc="https://[your-hash].public.blob.vercel-storage.com/car-mart.mp4"
-```
+\`\`\`
 
 ## Videos Needed
 
