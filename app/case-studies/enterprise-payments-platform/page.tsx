@@ -1,18 +1,18 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
-import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { ArrowLeft } from "lucide-react"
 import { LetsConnect } from "@/components/lets-connect"
+import { ContactModal } from "@/components/contact-modal"
 import { Footer } from "@/components/footer"
 
-export const metadata: Metadata = {
-  title: "Enterprise Payments Platform | Principal UX Architect",
-  description: "How I launched a zero-to-one payments platform in 4 months, achieving 200% autopay increase while blocking deceptive design patterns at America's Car-Mart.",
-}
-
 export default function EnterprisePaymentsPlatformCaseStudy() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -82,7 +82,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
                 When the CTO bypassed our process to push a deceptive pattern directly to development, I intervened. I
                 uncovered the actual business need behind the ask, designed a solution that served both customers and the
                 business goal, and built the executive communication strategy to sell it. The result: 200% higher adoption
-                than projected—without the dark pattern.
+                than projected—without the deceptive pattern.
               </p>
             </div>
 
@@ -143,7 +143,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6">What They Said</h2>
           <Card className="bg-primary/5 border-primary/20">
-            <CardContent className="pt-6">
+            <CardContent className="">
               <blockquote className="text-lg leading-relaxed italic mb-4">
                 "Jared brought exceptional strategic thinking and technical expertise to this complex project. They
                 architected an end-to-end experience that balanced user needs with business requirements and
@@ -169,7 +169,9 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
       </section>
 
       {/* Let's Connect */}
-      <LetsConnect />
+      <LetsConnect onContactClick={() => setIsContactModalOpen(true)} />
+
+      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
 
       <Footer />
     </div>
