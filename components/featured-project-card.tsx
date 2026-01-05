@@ -43,7 +43,7 @@ export function FeaturedProjectCard({
         {/* Content */}
         <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
           <div className="mb-4">
-            <p className="text-sm font-mono text-primary uppercase tracking-wider mb-2">
+            <p className="text-sm font-mono uppercase tracking-wider mb-2">
               Featured Case Study
             </p>
             <h3 className="text-2xl md:text-3xl font-display tracking-tight mb-1">
@@ -60,7 +60,7 @@ export function FeaturedProjectCard({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {metrics.map((metric, index) => (
               <div key={index} className="text-left">
-                <p className="text-xl md:text-2xl font-display text-primary">
+                <p className="text-xl md:text-2xl font-display">
                   {metric.value}
                 </p>
                 <p className="text-sm text-muted-foreground">{metric.label}</p>
