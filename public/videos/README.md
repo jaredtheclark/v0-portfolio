@@ -63,11 +63,41 @@ videoSrc="https://[your-hash].public.blob.vercel-storage.com/car-mart.mp4"
 - Consider 720p instead of 1080p to reduce file size
 - Remove audio track if not needed
 
-## Poster Images (Optional)
+## Image Specifications by Card Type
 
-Poster images serve as thumbnails before videos load. Place them in `/public/images/posters/`:
+### Featured Case Study Card (Full-Width)
 
-- `car-mart.png`
+Used for the prominent case study card on the homepage (`FeaturedProjectCard` component).
+
+**Layout behavior:**
+- Mobile: 16:9 aspect ratio (full width)
+- Desktop: Fills left half of card, height determined by content (~400-500px)
+
+**Recommended specs:**
+- **Resolution**: 1200x800 (3:2 ratio) or 1200x900 (4:3 ratio)
+- **Format**: PNG or JPG
+- **File Size**: Under 300KB
+- **Cropping**: Use `object-cover`, so keep subject matter centered
+- **Safe zone**: Keep important content in center 80% (edges may be cropped on mobile)
+
+### Project Cards (Grid)
+
+Used for the smaller project cards in the "More Projects" grid (`ProjectCard` component).
+
+**Layout behavior:**
+- Always 16:9 aspect ratio
+- 2-column grid on desktop, single column on mobile
+
+**Recommended specs:**
+- **Resolution**: 1920x1080 (Full HD) or 1280x720 (HD)
+- **Format**: PNG or JPG
+- **File Size**: Under 200KB
+- **Aspect Ratio**: 16:9 (required)
+
+### Poster Images (Video Thumbnails)
+
+Poster images serve as thumbnails before videos load:
+
 - `follett.png`
 - `jcpenney.png`
 - `walmart-infosec.jpg`
@@ -75,7 +105,7 @@ Poster images serve as thumbnails before videos load. Place them in `/public/ima
 - `walmart-luminate.png`
 - `handled-home.png`
 
-Poster specs:
+**Specs:**
 - **Format**: JPG or PNG
 - **Resolution**: 1920x1080
 - **File Size**: Under 200KB

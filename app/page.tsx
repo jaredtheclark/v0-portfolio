@@ -37,7 +37,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Case Studies */}
 
       {/* Featured Case Study */}
       <section className="py-20 px-6 bg-background border-t border-border/50">
@@ -52,8 +51,7 @@ export default function HomePage() {
               { value: "4 mo", label: "Delivery time" },
               { value: "100K+", label: "Customers" },
             ]}
-            videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.mp4"
-            posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
+            imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
             fallbackColor="#2563EB"
             caseStudyLink="/case-studies/enterprise-payments-platform"
           />

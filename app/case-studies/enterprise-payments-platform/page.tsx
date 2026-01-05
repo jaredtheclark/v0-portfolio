@@ -38,17 +38,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
         </div>
       </section>
 
-      {/* The Outcome */}
-      <section className="py-12 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">The Outcome</h2>
-          <p className="text-xl leading-relaxed">
-            Launched a zero-to-one payments platform in four months—on a timeline leadership said couldn't be
-            done—achieving 200% increase in autopay enrollment while blocking a C-level directive that would have
-            broken the customer experience.
-          </p>
-        </div>
-      </section>
+  
 
       {/* The Situation */}
       <section className="py-12 px-6">
@@ -87,8 +77,8 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
             <div>
               <h3 className="text-xl font-semibold text-primary mb-2">Enabled a team to move fast without breaking things.</h3>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Before my senior designer joined, I stood up the design system, documented the workflow, and synthesized
-                each requirement with business and technical context. They delivered a working demo by the end of week one.
+                Before bringing in a senior designer, I stood up the design system, documented the workflow, and synthesized
+                each requirement with business and technical context. This enabled them to deliver a working demo by the end of their first week.
               </p>
             </div>
 
@@ -110,6 +100,18 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+          {/* The Outcome */}
+      <section className="py-12 px-6 bg-muted/30">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">The Outcome</h2>
+          <p className="text-xl leading-relaxed">
+            Launched a zero-to-one payments platform in four months—on a timeline leadership said couldn't be
+            done—achieving 200% increase in autopay enrollment while blocking a C-level directive that would have
+            broken the customer experience.
+          </p>
         </div>
       </section>
 
