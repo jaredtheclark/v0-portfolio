@@ -48,7 +48,7 @@ export default function HomePage() {
           <FeaturedProjectCard
             title="America's Car-Mart"
             subtitle="Unified Payments Platform · Principal UX Architect · 2025"
-            outcome="Launched a zero-to-one payments platform in four months—on a timeline leadership said couldn't be done—achieving 200% increase in autopay enrollment while blocking a C-level directive that would have broken the customer experience."
+            outcome="Launched a zero-to-one payments platform in four months achieving 200% increase in autopay enrollment while blocking a C-level directive that would have broken the customer experience."
             metrics={[
               { value: "200%", label: "Autopay increase" },
               { value: "15%", label: "Portal growth" },
