@@ -187,7 +187,7 @@
   h2 {
     font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1;
     letter-spacing: -0.3px;
   }
@@ -243,6 +243,18 @@
 
   /* Removed hover-scale animation classes */
 
+  /* Wave animation */
+  .animate-wave {
+    animation: wave 600ms ease-in-out 300ms infinite;
+    transform-origin: 70% 70%;
+  }
+
+  /* Combined slide-in and wave animation */
+  .animate-wave-in {
+    animation: slideInWave 300ms ease-out forwards, wave 600ms ease-in-out 300ms infinite;
+    transform-origin: 70% 70%;
+  }
+
   /* Smooth transitions */
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -266,5 +278,41 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInWave {
+  from {
+    transform: translateX(-8px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

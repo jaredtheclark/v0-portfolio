@@ -22,7 +22,7 @@ export function LetsConnect({ onContactClick }: LetsConnectProps) {
           <Button size="lg" onClick={onContactClick} className="cursor-pointer group">
             <span className="inline-flex items-center transition-all duration-300 ease-out">
               <span>Say Hello</span>
-              <span className="inline-block w-0 overflow-hidden opacity-0 translate-x-[-8px] transition-all duration-300 ease-out group-hover:w-[1.25rem] group-hover:opacity-100 group-hover:translate-x-0 group-hover:ml-2">
+              <span className="inline-block w-0 overflow-visible opacity-0 transition-all duration-300 ease-out group-hover:w-[1.25rem] group-hover:opacity-100 group-hover:ml-2 group-hover:animate-wave-in">
                 👋
               </span>
             </span>
