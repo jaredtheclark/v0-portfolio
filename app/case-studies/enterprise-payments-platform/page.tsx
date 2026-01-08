@@ -128,13 +128,13 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
               As we were coming in for a landing to achieve our launch date, a senior leader bypassed our process entirely.
             </p>
             <p>
-              A front-end developer had been pulled aside and directed to build a modal—one that would hijack the payment confirmation flow. The intent was clear: goose enrollment numbers. The method was a deceptive pattern that was confusing and broke the user experience.
+              A front-end developer had been pulled aside and directed to build a modal—one that would hijack the payment confirmation flow. The intent was to increase autopay enrollment. The method was a deceptive pattern that was confusing and broke the user experience.
             </p>
 
 
             <h4 className="text-xl font-medium leading-tight tracking-tight text-foreground pt-4">The Pressure</h4>
             <p>
-              When I raised concerns, the response wasn't a conversation—it was a dismissal. Leadership asked when we would deliver what he asked for. Our product director suggested we just build what was requested. The developer had already coded it. The path of least resistance was paved and waiting. I had private support from a senior designer, and a UX designer in another department. But in the room where decisions were made, I was alone.
+              When I raised concerns, the response reflected delivery pressure more than discussion. Leadership focused on whether we could ship the request as stated. The Product Director advocated for forward progress, with the intent to iterate once compliance, UX, and revenue concerns were aligned. The developer had already coded the change, and momentum favored the fastest path to launch. While I had support from peers across design, the responsibility to reframe the problem and present a viable alternative ultimately landed with me.
             </p>
 
             <h4 className="text-xl font-medium leading-tight tracking-tight text-foreground pt-4">What Was Actually at Risk</h4>
@@ -171,7 +171,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <h4 className="text-xl font-medium leading-tight tracking-tight text-foreground pt-2">The Line I Held</h4>
             <p>
-              I didn't fight the modal in a meeting with words I used design to cast my vision. I designed an alternative solution with inline visibility of autopay status during the one-time payment flow. While I validated and advocated for the solution, I designed and prototyped a version of the modal that aligned with our design language.
+              I didn’t fight the modal with words. I used design to cast a clearer vision. I designed an alternative solution with inline visibility of autopay status during the one-time payment flow. While I validated and advocated for the solution, I designed and prototyped a version of the modal that aligned with our design language.
             </p>
             <p>
               Customers could see whether they were enrolled, and opt in without leaving their primary task. The same information appeared on the confirmation screen, a second, non-blocking touchpoint. I prototyped both approaches and created side-by-side GIFs: the directed solution (modal hijack, confused flow, small dismiss target) versus my solution (clear status, optional action, expected behavior).
@@ -219,7 +219,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
           <h2 className="text-3xl font-semibold mb-6 tracking-tight">Results & Outcome</h2>
 
           <p className="text-xl leading-relaxed text-foreground mb-6">
-            Our team launched a zero-to-one payments platform in four months, achieving 200% increase in autopay enrollment while blocking a C-level directive that would have broken the customer experience. Users of the portal had their needs satisfied, indicated by customers paying their bill through our portal rather than choosing to drive to a car lot.
+            Our team launched a zero-to-one payments platform in four months, achieving 200% increase in autopay enrollment. Successfully reframed a late-stage executive request that would have degraded the customer experience. Users of the portal had their needs satisfied, indicated by customers paying their bill through our portal rather than choosing to drive to a car lot.
           </p>
 
           <ul className="space-y-3">
