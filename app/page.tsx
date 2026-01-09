@@ -25,8 +25,8 @@ export default function HomePage() {
             Hi, I'm Jared. I help teams solve the right problems, make strategic decisions, and ship design systems that
             scale.
           </h1>
-          <p className="font-mono text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
-            Design Systems | UX Research | Strategic Partner
+          <p className="font-mono md:text-xl text-md text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
+            Design Systems | AI + Code | Design Strategy | UX Research
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer group">
