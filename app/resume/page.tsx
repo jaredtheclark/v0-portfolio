@@ -19,7 +19,7 @@ export default function ResumePage() {
           <div className="mb-12">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
               <div>
-                <h1 className="text-5xl font-bold mb-2">Jared Clark</h1>
+                <h1 className="mb-2">Jared Clark</h1>
                 <p className="text-xl text-muted-foreground">Product Design Lead</p>
               </div>
               <Button asChild>
@@ -54,7 +54,7 @@ export default function ResumePage() {
 
           {/* Summary */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Summary</h2>
+            <h2 className="mb-4">Summary</h2>
             <p className="text-lg leading-relaxed">
               Principal UX Product Designer with 10+ years leading digital product transformation for enterprise SaaS and e-commerce clients. I combine user research methods (Jobs-to-Be-Done, contextual inquiry, ORCA) with AI-augmented design workflows to deliver zero-to-one products that drive measurable business impact. My approach bridges UX design, product management, and software development to solve complex problems at scale.
             </p>
@@ -62,13 +62,13 @@ export default function ResumePage() {
 
           {/* Professional Experience */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Professional Experience</h2>
+            <h2 className="mb-6">Professional Experience</h2>
 
             <div className="space-y-8">
               {/* Kitestring */}
               <div>
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold">Principal Product Designer</h3>
+                  <h3>Principal Product Designer</h3>
                   <p className="text-muted-foreground">
                     Kitestring Technical Services | Jul 2022 - Present | Remote
                   </p>
@@ -92,7 +92,7 @@ export default function ResumePage() {
               {/* RevUnit */}
               <div>
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold">Senior Product Designer</h3>
+                  <h3>Senior Product Designer</h3>
                   <p className="text-muted-foreground">RevUnit | Apr 2019 - Jul 2022 | Remote</p>
                 </div>
                 <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
@@ -111,7 +111,7 @@ export default function ResumePage() {
               {/* Lauren James */}
               <div>
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold">Lead UX Designer → Director of Digital Strategy</h3>
+                  <h3>Lead UX Designer → Director of Digital Strategy</h3>
                   <p className="text-muted-foreground">Lauren James | Oct 2016 - Mar 2019 | Fayetteville, AR</p>
                 </div>
                 <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
@@ -128,7 +128,7 @@ export default function ResumePage() {
               {/* Aristotle Interactive */}
               <div>
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold">UX/UI Designer</h3>
+                  <h3>UX/UI Designer</h3>
                   <p className="text-muted-foreground">Aristotle Interactive | Aug 2015 - Oct 2016 | Little Rock, AR</p>
                 </div>
                 <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
@@ -140,16 +140,16 @@ export default function ResumePage() {
 
           {/* Education */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Education</h2>
+            <h2 className="mb-4">Education</h2>
             <div>
-              <h3 className="text-xl font-bold">Bachelors Visual Arts - Graphic Design & Photography</h3>
+              <h3>Bachelors Visual Arts - Graphic Design & Photography</h3>
               <p className="text-muted-foreground">University of Arkansas | Aug 2011 - May 2015 | Fayetteville, AR</p>
             </div>
           </div>
 
           {/* Skills */}
           <div>
-            <h2 className="text-2xl font-bold mb-4">Skills</h2>
+            <h2 className="mb-4">Skills</h2>
             <div className="flex flex-wrap gap-2">
               {[
                 "Jobs-to-Be-Done (JTBD)",

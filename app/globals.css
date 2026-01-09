@@ -175,37 +175,25 @@
     letter-spacing: var(--tracking-normal);
   }
 
-  /* Apply Poppins font to all heading elements with Figma-specified styles */
+  /* Typography system matching enterprise payments platform styles */
   h1 {
     font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.48px;
+    @apply text-4xl md:text-5xl font-medium leading-none tracking-tight;
   }
 
   h2 {
     font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.3px;
+    @apply text-3xl font-semibold tracking-tight;
   }
 
   h3 {
     font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.48px;
+    @apply text-xl leading-tight tracking-tight;
   }
 
   h4 {
     font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.4px;
+    @apply text-lg font-medium leading-tight tracking-tight;
   }
 }
 
