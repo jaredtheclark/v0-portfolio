@@ -1,7 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Download, Mail, Phone, MapPin, Linkedin, Globe } from "lucide-react"
 
 export const metadata = {
@@ -54,172 +53,148 @@ export default function ResumePage() {
           </div>
 
           {/* Summary */}
-          <Card className="mb-8">
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">Summary</h2>
-              <p className="text-lg leading-relaxed">
-                Principal UX Product Designer with 10+ years leading digital product transformation for enterprise SaaS
-                and e-commerce clients. I combine user research methods (Jobs-to-Be-Done, contextual inquiry, ORCA)
-                with AI-augmented design workflows to deliver zero-to-one products that drive measurable business
-                impact. My approach bridges UX design, product management, and software development to solve complex
-                problems at scale.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Summary</h2>
+            <p className="text-lg leading-relaxed">
+              Principal UX Product Designer with 10+ years leading digital product transformation for enterprise SaaS and e-commerce clients. I combine user research methods (Jobs-to-Be-Done, contextual inquiry, ORCA) with AI-augmented design workflows to deliver zero-to-one products that drive measurable business impact. My approach bridges UX design, product management, and software development to solve complex problems at scale.
+            </p>
+          </div>
 
           {/* Professional Experience */}
-          <Card className="mb-8">
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-6">Professional Experience</h2>
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Professional Experience</h2>
 
-              <div className="space-y-8">
-                {/* Kitestring */}
-                <div>
-                  <div className="mb-3">
-                    <h3 className="text-xl font-bold">Principal Product Designer</h3>
-                    <p className="text-muted-foreground">
-                      Kitestring Technical Services • Jul 2022 - Present • Remote
-                    </p>
-                  </div>
-                  <ul className="space-y-2 text-lg leading-relaxed list-disc list-inside">
-                    <li>
-                      Led end-to-end UX strategy for enterprise digital transformation initiatives serving 100,000+
-                      users, engaging cross-functional teams of designers, developers, business analysts, and technology
-                      architects across multiple client engagements
-                    </li>
-                    <li>
-                      Drove product strategy and design execution for zero-to-one platform launches, achieving 200%
-                      increases in user adoption and $6M+ cost savings
-                    </li>
-                    <li>
-                      Created and executed UX research program including onsite contextual inquiry, stakeholder
-                      interviews, JTBD, and ORCA workshops to inform payment platform serving 150+ dealerships across 12
-                      states
-                    </li>
-                    <li>
-                      Designed next-generation mobile point-of-sale (POS) solution enabling sales associates to complete
-                      transactions on sales floor, eliminating customer wait times at fixed registers and modernizing
-                      20-year-old legacy system
-                    </li>
-                  </ul>
+            <div className="space-y-8">
+              {/* Kitestring */}
+              <div>
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold">Principal Product Designer</h3>
+                  <p className="text-muted-foreground">
+                    Kitestring Technical Services | Jul 2022 - Present | Remote
+                  </p>
                 </div>
-
-                {/* RevUnit */}
-                <div>
-                  <div className="mb-3">
-                    <h3 className="text-xl font-bold">Senior Product Designer</h3>
-                    <p className="text-muted-foreground">RevUnit • Apr 2019 - Jul 2022 • Remote</p>
-                  </div>
-                  <ul className="space-y-2 text-lg leading-relaxed list-disc list-inside">
-                    <li>
-                      Designed B2B data visualization SaaS platform for Fortune 500 retailer Walmart, enabling CPG
-                      brands to access real-time sales performance insights across retail locations
-                    </li>
-                    <li>
-                      Led UX design for enterprise legal management platform serving Walmart's internal legal team and
-                      outside counsel, consolidating legacy systems and streamlining case workflows
-                    </li>
-                    <li>
-                      Designed Handled, a moving services app with computer vision inventory features, leading design
-                      team from concept through acquisition in 2019
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Lauren James */}
-                <div>
-                  <div className="mb-3">
-                    <h3 className="text-xl font-bold">Lead UX Designer → Director of Digital Strategy</h3>
-                    <p className="text-muted-foreground">Lauren James • Oct 2016 - Mar 2019 • Fayetteville, AR</p>
-                  </div>
-                  <ul className="space-y-2 text-lg leading-relaxed list-disc list-inside">
-                    <li>
-                      Led 10-person marketing and design team for multi-brand e-commerce retailer, directing UX strategy
-                      and technical implementation across three direct-to-consumer brands
-                    </li>
-                    <li>
-                      Designed cart and checkout experiences using customer research and analytics, improving conversion
-                      rates and average order value
-                    </li>
-                    <li>Directed $1M flash sale campaign integrating product design, and marketing strategy</li>
-                  </ul>
-                </div>
-
-                {/* Aristotle Interactive */}
-                <div>
-                  <div className="mb-3">
-                    <h3 className="text-xl font-bold">UX/UI Designer</h3>
-                    <p className="text-muted-foreground">Aristotle Interactive • Aug 2015 - Oct 2016 • Little Rock, AR</p>
-                  </div>
-                  <ul className="space-y-2 text-lg leading-relaxed list-disc list-inside">
-                    <li>Designed and maintained the design of government (.gov) and state tourism departments.</li>
-                  </ul>
-                </div>
+                <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
+                  <li>
+                    Led end-to-end UX strategy for enterprise digital transformation initiatives serving 100,000+ users, engaging cross-functional teams of designers, developers, business analysts, and technology architects across multiple client engagements
+                  </li>
+                  <li>
+                    Drove product strategy and design execution for zero-to-one platform launches, achieving 200% increases in user adoption and $6M+ cost savings
+                  </li>
+                  <li>
+                    Created and executed UX research program including onsite contextual inquiry, stakeholder interviews, JTBD, and ORCA workshops to inform payment platform serving 150+ dealerships across 12 states
+                  </li>
+                  <li>
+                    Designed next-generation mobile point-of-sale (POS) solution enabling sales associates to complete transactions on sales floor, eliminating customer wait times at fixed registers and modernizing 20-year-old legacy system
+                  </li>
+                </ul>
               </div>
-            </CardContent>
-          </Card>
+
+              {/* RevUnit */}
+              <div>
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold">Senior Product Designer</h3>
+                  <p className="text-muted-foreground">RevUnit | Apr 2019 - Jul 2022 | Remote</p>
+                </div>
+                <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
+                  <li>
+                    Designed B2B data visualization SaaS platform for Fortune 500 retailer Walmart, enabling CPG brands to access real-time sales performance insights across retail locations
+                  </li>
+                  <li>
+                    Led UX design for enterprise legal management platform serving Walmart's internal legal team and outside counsel, consolidating legacy systems and streamlining case workflows
+                  </li>
+                  <li>
+                    Designed Handled, a moving services app with computer vision inventory features, leading design team from concept through acquisition in 2019
+                  </li>
+                </ul>
+              </div>
+
+              {/* Lauren James */}
+              <div>
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold">Lead UX Designer → Director of Digital Strategy</h3>
+                  <p className="text-muted-foreground">Lauren James | Oct 2016 - Mar 2019 | Fayetteville, AR</p>
+                </div>
+                <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
+                  <li>
+                    Led 10-person marketing and design team for multi-brand e-commerce retailer, directing UX strategy and technical implementation across three direct-to-consumer brands
+                  </li>
+                  <li>
+                    Designed cart and checkout experiences using customer research and analytics, improving conversion rates and average order value
+                  </li>
+                  <li>Directed $1M flash sale campaign integrating product design, and marketing strategy</li>
+                </ul>
+              </div>
+
+              {/* Aristotle Interactive */}
+              <div>
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold">UX/UI Designer</h3>
+                  <p className="text-muted-foreground">Aristotle Interactive | Aug 2015 - Oct 2016 | Little Rock, AR</p>
+                </div>
+                <ul className="space-y-2 text-lg leading-relaxed list-disc pl-5">
+                  <li>Designed and maintained the design of government (.gov) and state tourism departments.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
           {/* Education */}
-          <Card className="mb-8">
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">Education</h2>
-              <div>
-                <h3 className="text-xl font-bold">Bachelors Visual Arts - Graphic Design & Photography</h3>
-                <p className="text-muted-foreground">University of Arkansas • Aug 2011 - May 2015 • Fayetteville, AR</p>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Education</h2>
+            <div>
+              <h3 className="text-xl font-bold">Bachelors Visual Arts - Graphic Design & Photography</h3>
+              <p className="text-muted-foreground">University of Arkansas | Aug 2011 - May 2015 | Fayetteville, AR</p>
+            </div>
+          </div>
 
           {/* Skills */}
-          <Card>
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold mb-4">Skills</h2>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Jobs-to-Be-Done (JTBD)",
-                  "Contextual Inquiry",
-                  "User Testing",
-                  "Persona Development",
-                  "Journey Mapping",
-                  "Service Design",
-                  "ORCA Methodology",
-                  "Stakeholder Interviews",
-                  "Figma",
-                  "Design Systems",
-                  "Prototyping",
-                  "Wireframing",
-                  "Responsive Design",
-                  "Mobile-First Design",
-                  "Accessibility (WCAG)",
-                  "Information Architecture",
-                  "HTML/CSS",
-                  "JavaScript",
-                  "React Components",
-                  "Azure DevOps",
-                  "API Integration",
-                  "Agile/Scrum",
-                  "Git",
-                  "Developer Handoff",
-                  "Cross-Functional Team Leadership",
-                  "Product Strategy",
-                  "Stakeholder Management",
-                  "Workshop Facilitation",
-                  "Change Management",
-                  "OKRs",
-                  "Roadmapping",
-                  "AI-Augmented Design Workflows",
-                  "Generative AI Integration",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-muted text-sm rounded-md hover:bg-muted-foreground/10 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Skills</h2>
+            <div className="flex flex-wrap gap-2">
+              {[
+                "Jobs-to-Be-Done (JTBD)",
+                "Contextual Inquiry",
+                "User Testing",
+                "Persona Development",
+                "Journey Mapping",
+                "Service Design",
+                "ORCA Methodology",
+                "Stakeholder Interviews",
+                "Figma",
+                "Design Systems",
+                "Prototyping",
+                "Wireframing",
+                "Responsive Design",
+                "Mobile-First Design",
+                "Accessibility (WCAG)",
+                "Information Architecture",
+                "HTML/CSS",
+                "JavaScript",
+                "React Components",
+                "Azure DevOps",
+                "API Integration",
+                "Agile/Scrum",
+                "Git",
+                "Developer Handoff",
+                "Cross-Functional Team Leadership",
+                "Product Strategy",
+                "Stakeholder Management",
+                "Workshop Facilitation",
+                "Change Management",
+                "OKRs",
+                "Roadmapping",
+                "AI-Augmented Design Workflows",
+                "Generative AI Integration",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-muted text-sm rounded-md hover:bg-muted-foreground/10 transition-colors"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
