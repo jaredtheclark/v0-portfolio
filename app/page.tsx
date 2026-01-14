@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactModal } from "@/components/contact-modal"
-import { LinkedInButton } from "@/components/linkedin-button"
 import { ProjectCard } from "@/components/project-card"
 import { FeaturedProjectCard } from "@/components/featured-project-card"
 import { LetsConnect } from "@/components/lets-connect"
@@ -29,21 +28,15 @@ export default function HomePage() {
             Design Systems | AI + Code | Design Strategy | UX Research
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
-            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer group">
-              <span className="inline-flex items-center transition-all duration-300 ease-out">
-                <span>Say Hello</span>
-                <span className="inline-block w-0 overflow-visible opacity-0 transition-all duration-300 ease-out group-hover:w-[1.25rem] group-hover:opacity-100 group-hover:ml-2 group-hover:animate-wave-in">
-                  👋
-                </span>
-              </span>
+            <Button size="lg" asChild>
+              <a href="/case-studies">View Case Studies</a>
             </Button>
-            <LinkedInButton />
           </div>
         </div>
       </section>
 
       {/* Featured Case Studies */}
-      <section className="py-20 px-6 bg-background border-t border-border/50">
+      <section id="case-studies" className="py-20 px-6 bg-background border-t border-border/50">
         <div className="max-w-6xl mx-auto space-y-12">
           <FeaturedProjectCard
             title="Enterprise Payments Platform"

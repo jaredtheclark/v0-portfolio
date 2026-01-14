@@ -1,9 +1,6 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { ArrowRight, TrendingUp, Users } from "lucide-react"
+import { FeaturedProjectCard } from "@/components/featured-project-card"
 
 export default function CaseStudiesPage() {
   return (
@@ -13,95 +10,42 @@ export default function CaseStudiesPage() {
       {/* Header */}
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold">Case Studies</h1>
+          <h1>Case Studies</h1>
         </div>
       </section>
 
       {/* Case Studies Grid */}
       <section className="py-0 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
-            {/* America's Car-Mart Case Study */}
-            <Card className="overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-primary mb-2">America's Car-Mart</h3>
-                  <p className="text-muted-foreground">Unified Payments Platform</p>
-                </div>
-              </div>
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <CardTitle className="text-xl mb-2">
-                      Launching a zero-to-one platform in 4 months—while holding the line
-                    </CardTitle>
-                    <CardDescription>
-                      Led enterprise payments modernization achieving 200% autopay increase, while blocking a C-level
-                      directive that would have broken the customer experience.
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-primary" />
-                    <span className="text-sm font-medium">200% autopay increase</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-primary" />
-                    <span className="text-sm font-medium">100K+ customers</span>
-                  </div>
-                </div>
+        <div className="max-w-6xl mx-auto space-y-12">
+          <FeaturedProjectCard
+            title="Enterprise Payments Platform"
+            subtitle="America's Car-Mart · Principal UX Architect · 2025"
+            outcome="Launched a zero-to-one payments platform in four months achieving 200% increase in autopay enrollment while blocking a C-level directive that would have broken the customer experience."
+            metrics={[
+              { value: "200%", label: "Autopay increase" },
+              { value: "15%", label: "Portal growth" },
+              { value: "4 mo", label: "Delivery time" },
+              { value: "100K+", label: "Customers" },
+            ]}
+            imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
+            fallbackColor="#2563EB"
+            caseStudyLink="/case-studies/enterprise-payments-platform"
+          />
 
-                <Button asChild className="w-full">
-                  <Link href="/case-studies/enterprise-payments-platform">
-                    Read Full Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* JCPenney Point of Sale Case Study */}
-            <Card className="overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-primary mb-2">JCPenney</h3>
-                  <p className="text-muted-foreground">Next Generation POS</p>
-                </div>
-              </div>
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <CardTitle className="text-xl mb-2">
-                      Modernizing 20-year-old registers to mobile-first checkout
-                    </CardTitle>
-                    <CardDescription>
-                      Led UI design and design system creation for a national retailer's complete POS overhaul across 650+ stores.
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-primary" />
-                    <span className="text-sm font-medium">$6.2M hardware savings</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-primary" />
-                    <span className="text-sm font-medium">86 jobs discovered</span>
-                  </div>
-                </div>
-
-                <Button asChild className="w-full">
-                  <Link href="/case-studies/point-of-sale">
-                    Read Full Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <FeaturedProjectCard
+            title="Next Generation Point of Sale"
+            subtitle="JCPenney · Senior UX Designer · 2022"
+            outcome="Led UI design and design system creation for a national retailer's complete POS overhaul—from 20-year-old registers to mobile-first checkout across 650+ stores."
+            metrics={[
+              { value: "$6.2M", label: "Hardware savings" },
+              { value: "86", label: "Jobs discovered" },
+              { value: "31+", label: "Stores launched" },
+              { value: "4 mo", label: "Research to handoff" },
+            ]}
+            imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
+            fallbackColor="#E5E5E5"
+            caseStudyLink="/case-studies/point-of-sale"
+          />
         </div>
       </section>
 
