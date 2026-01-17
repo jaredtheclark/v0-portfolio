@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Navigation } from "@/components/navigation"
 import { LetsConnect } from "@/components/lets-connect"
 import { ContactModal } from "@/components/contact-modal"
@@ -8,6 +8,31 @@ import { Footer } from "@/components/footer"
 
 export default function PointOfSaleCaseStudy() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play()
+          } else {
+            video.pause()
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    observer.observe(video)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,6 +71,21 @@ export default function PointOfSaleCaseStudy() {
               <p className="text-3xl font-semibold">4 mo</p>
               <p className="text-sm text-muted-foreground">Research to handoff</p>
             </div>
+          </div>
+
+          {/* Hero Video */}
+          <div className="mt-12 rounded-2xl overflow-hidden">
+            <video
+              ref={videoRef}
+              className="w-full h-auto"
+              muted
+              loop
+              playsInline
+              poster="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
+              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
@@ -117,7 +157,7 @@ export default function PointOfSaleCaseStudy() {
 
             <h3 className="text-foreground pt-4">Four Personas, Validated</h3>
             <p>
-              The client came to us with two proto-personas: "Sally Sixteen" (a young part-timer) and "Edna Eighty" (a veteran associate). Through interviews and surveys, we expanded and validated these into four research-backed personas:
+              The client came to us with two proto-personas representing a young part-timer and another to represent their veteran associates. Through interviews and surveys, we expanded and validated these into four research-backed personas:
             </p>
           </div>
 
@@ -186,6 +226,41 @@ export default function PointOfSaleCaseStudy() {
               <li>Till management interfaces for cash counting and reconciliation</li>
               <li>Specialty workflows for Fine Jewelry, Salon appointments, and BOPIS fulfillment</li>
             </ul>
+          </div>
+
+          {/* UI Screens Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+            <div className="bg-card rounded-lg overflow-hidden shadow-sm">
+              <img
+                src="https://www.figma.com/api/mcp/asset/52255e92-b62f-4537-8f7e-72dabe7d6c4b"
+                alt="Main Menu - POS home screen with transaction options"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-card rounded-lg overflow-hidden shadow-sm">
+              <img
+                src="https://www.figma.com/api/mcp/asset/b37a75b0-0098-4b1f-8d6d-8eb524ae9618"
+                alt="Item Entry - Transaction cart with rewards"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-card rounded-lg overflow-hidden shadow-sm">
+              <img
+                src="https://www.figma.com/api/mcp/asset/f42937b8-0145-44aa-ae60-1fb406a31666"
+                alt="Just Ask - Customer lookup and rewards"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-card rounded-lg overflow-hidden shadow-sm">
+              <img
+                src="https://www.figma.com/api/mcp/asset/10095fba-9297-4aa1-bc12-c416126909b4"
+                alt="Accept Tender - Payment screen"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
               Each component mapped to real data objects surfaced in our ORCA workshops, ensuring the UI accurately represented what the backend systems could actually support.
             </p>
@@ -209,6 +284,16 @@ export default function PointOfSaleCaseStudy() {
               <p className="text-lg leading-relaxed text-muted-foreground">
                 The ELO M60 device could be used handheld on the sales floor or docked at a fixed terminal with a larger touchscreen. Rather than designing two separate experiences, I created a responsive system where the same UI adapted to context.
               </p>
+
+              {/* Device Mockup */}
+              <div className="my-6 flex justify-center">
+                <img
+                  src="https://www.figma.com/api/mcp/asset/52255e92-b62f-4537-8f7e-72dabe7d6c4b"
+                  alt="ELO M60 mobile POS device showing the main menu interface with responsive layout"
+                  className="max-w-sm w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+
               <p className="text-lg leading-relaxed text-muted-foreground">
                 On the floor, associates could scan items, look up inventory, and even complete transactions. At the dock, the M60 screen flipped to face customers for signature capture and payment input while associates used the larger display for complex operations like returns and exchanges.
               </p>
