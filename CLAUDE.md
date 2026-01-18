@@ -33,7 +33,7 @@ yarn lint
 - **Language**: TypeScript with strict mode enabled
 - **Styling**: Tailwind CSS v4 with custom design tokens
 - **UI Components**: shadcn/ui (New York style) + Radix UI primitives
-- **Fonts**: Geist Sans and Geist Mono
+- **Fonts**: Poppins, Golos Text, Roboto Mono
 - **Package Manager**: Yarn 1.22.22
 - **Analytics**: Vercel Analytics
 
@@ -123,10 +123,6 @@ The project is deployed on Vercel and linked to v0.app:
 
 ## Portfolio-Specific Guidelines
 
-### Design System: Volca FM Theme
-
-This portfolio uses a custom design system inspired by the Korg Volca FM synthesizer:
-
 **Color Philosophy**:
 - **Dark Foundation**: Deep black backgrounds (`--background: 0% 0 0`) for high contrast
 - **Cyan Primary**: Bright cyan (`--primary: 70% 0.15 200`) as the main accent - evokes electronic hardware
@@ -146,25 +142,6 @@ This portfolio uses a custom design system inspired by the Korg Volca FM synthes
 - Avoid introducing new colors - work within the 5-color system
 
 ### Content Structure & Case Studies
-
-**Case Study Organization**:
-Each case study follows a Principal-Level Portfolio Template structure:
-
-1. **Hero Section**: Outcome-focused title, role, timeline, key metrics
-2. **Overview**: Project context, team size, personal contribution
-3. **Challenge**: Business problem with strategic context
-4. **Approach**: Methodology, frameworks created, leadership demonstrated
-5. **Solution**: Design decisions with rationale
-6. **Results**: Quantified business impact with context
-7. **Key Learnings**: Titled paragraphs (not bullets) showing strategic growth
-8. **Skills Demonstrated**: Technical and leadership capabilities
-
-**Writing Guidelines**:
-- **Balance "I" vs "We"**: Use "I" for personal contributions (research, frameworks, decisions), "We" for team execution
-- **Metrics with Context**: ✅ "200% ↑ Autopay Adoption (2% → 4-6%)" vs ❌ "Improved adoption"
-- **Strategic Framing**: Show business impact, not just design execution
-- **Scannable**: 2-minute scan time, 30-second impact comprehension
-- **Length**: 1,500-2,500 words per case study
 
 **Adding New Case Studies**:
 1. Create new directory: `app/case-studies/[project-slug]/page.tsx`
@@ -266,7 +243,6 @@ export const metadata: Metadata = {
 - [ ] Proper TypeScript types
 - [ ] Metadata/SEO included
 - [ ] Accessibility standards met
-- [ ] Case study content follows template (if applicable)
 
 ## Common Tasks
 
@@ -290,3 +266,39 @@ Then customize in `components/ui/[component].tsx`
 
 ### Update Navigation
 Edit `components/navigation.tsx` - Add new links and update active state logic
+
+## Figma Design Reference
+
+**Homepage Design File**: https://www.figma.com/design/eDXpPTBYUucpO8tfWsRNqJ/Portfolio?node-id=1500-12404
+
+The complete homepage design is documented in Figma with responsive breakpoints:
+- Desktop: Node 1500:11371 (1440px wide)
+- Tablet: Node 1500:11372 (840px wide)
+- Mobile: Node 1500:11373 (430px wide)
+
+**Key Design Specifications**:
+
+**Enterprise Payments Section** (Case Study 2):
+- Desktop: Image positioned at `top: 48px, left: 0` with width `909px`, height `710px` in a container with height `627px` (clips bottom)
+- Mobile/Tablet: Image centered horizontally with appropriate scaling
+- Overflow: Hidden on container to clip image edges
+- Image URLs:
+  - Desktop: `acm-payments-ipad-ANQJyhKSAMdn24xKEnd1AO8nfcxwtl.png`
+  - Mobile: `ACM-iPad-fimEV8EFeOBpxGUooPLPYfiqpQNCgU.png`
+
+**Design System Colors** (from Figma):
+- Dune: `#2D2A26` (text-foreground equivalent)
+- Chicago: `#5C5853` (text-muted-foreground equivalent)
+- Satin Linen: `#EEEBE2` (background tones)
+- Swiss Coffee: `#D6D3D1` (borders)
+
+**Typography Specifications**:
+- Heading 2: Poppins SemiBold, 30px, line-height: 1, tracking: -0.3px
+- Paragraph: Golos Text Regular, 16px, line-height: 1.5
+- Monospaced: Geist Mono Regular, 16px, line-height: 1.5
+- Small: Golos Text Medium, 14px, line-height: 1.5, tracking: 0.07px
+
+**Layout Spacing**:
+- Desktop padding: `144px` horizontal
+- Section gaps: `72px` between content and images
+- Card gaps: `8px` vertical stacking

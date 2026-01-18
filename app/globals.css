@@ -53,6 +53,14 @@
   --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.25);
   --tracking-normal: normal;
   --spacing: 0.25rem;
+  /* Gradient variables for section backgrounds */
+  --gradient-hero-start: rgba(235, 235, 235, 0.02);
+  --gradient-hero-end: rgba(201, 201, 201, 0.06);
+  --gradient-case-study-start: rgba(40, 60, 16, 0.02);
+  --gradient-case-study-end: rgba(40, 60, 16, 0.06);
+  --gradient-case-study-overlay: rgba(252, 252, 251, 0.7);
+  --gradient-snapshots-start: rgba(252, 252, 251, 0.4);
+  --footer-overlay-opacity: 0.6;
 }
 
 .dark {
@@ -103,6 +111,14 @@
   --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 4px 6px -3px hsl(0 0% 0% / 0.20);
   --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 8px 10px -3px hsl(0 0% 0% / 0.20);
   --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.50);
+  /* Dark mode gradient variables - customize these for your dark theme */
+  --gradient-hero-start: rgba(255, 255, 255, 0.02);
+  --gradient-hero-end: rgba(255, 255, 255, 0.05);
+  --gradient-case-study-start: rgba(255, 255, 255, 0.02);
+  --gradient-case-study-end: rgba(255, 255, 255, 0.05);
+  --gradient-case-study-overlay: rgba(255, 255, 255, 0.05);
+  --gradient-snapshots-start: rgba(255, 255, 255, 0.03);
+  --footer-overlay-opacity: 0.5;
 }
 
 @theme inline {
