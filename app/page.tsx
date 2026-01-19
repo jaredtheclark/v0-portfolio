@@ -231,7 +231,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-base text-foreground leading-[26px]">
-              Launched a zero-to-one payments platform in four months achieving 200% increase in auto pay enrollment working a C-level directive that would have broken the customer experience.
+              Launched a zero-to-one payments platform in four months achieving 200% increase in auto pay enrollment.
             </p>
 
             <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
