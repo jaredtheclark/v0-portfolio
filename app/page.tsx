@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { ContactModal } from "@/components/contact-modal"
@@ -52,13 +52,30 @@ function SnapshotCard({
   title,
   description,
   imageSrc,
+  videoSrc,
   isLocked = false,
 }: {
   title: string
   description: string
   imageSrc: string
+  videoSrc?: string
   isLocked?: boolean
 }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+    }
+  }
+
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between gap-4">
@@ -72,12 +89,29 @@ function SnapshotCard({
           </div>
         )}
       </div>
-      <div className="overflow-hidden rounded-[4.8px] aspect-[16/10]">
-        <img
-          src={imageSrc}
-          alt={`${title} project preview`}
-          className="w-full h-full object-cover"
-        />
+      <div
+        className="overflow-hidden rounded-[4.8px] aspect-[16/10]"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {videoSrc ? (
+          <video
+            ref={videoRef}
+            poster={imageSrc}
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            src={imageSrc}
+            alt={`${title} project preview`}
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
     </div>
   )
@@ -296,6 +330,7 @@ export default function HomePage() {
               title="Follett Corporation"
               description="Service Design | Point of Sale"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
             />
 
             {/* Walmart Information Security */}
@@ -303,6 +338,7 @@ export default function HomePage() {
               title="Walmart Information Security"
               description="User Research | Design Systems"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.mp4"
               isLocked={true}
             />
 
@@ -311,6 +347,7 @@ export default function HomePage() {
               title="Walmart Legal Themis"
               description="User Interface | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.mp4"
               isLocked={true}
             />
 
@@ -319,6 +356,7 @@ export default function HomePage() {
               title="Walmart Data Ventures Luminate"
               description="Data Visualization | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
             />
 
             {/* Handled Home */}
@@ -326,6 +364,7 @@ export default function HomePage() {
               title="Handled Home"
               description="Design Systems | Consumer App"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.mp4"
             />
           </div>
         </div>
