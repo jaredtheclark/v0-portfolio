@@ -9,16 +9,19 @@ import { Footer } from "@/components/footer"
 export default function PointOfSaleCaseStudy() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoError, setVideoError] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
-    if (!video) return
+    if (!video || videoError) return
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            video.play()
+            video.play().catch(() => {
+              // Autoplay failed - this is fine, video will show poster
+            })
           } else {
             video.pause()
           }
@@ -32,7 +35,7 @@ export default function PointOfSaleCaseStudy() {
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [videoError])
 
   return (
     <div className="min-h-screen bg-background">
@@ -75,17 +78,29 @@ export default function PointOfSaleCaseStudy() {
 
           {/* Hero Video */}
           <div className="mt-12 rounded-2xl overflow-hidden">
-            <video
-              ref={videoRef}
-              className="w-full h-auto"
-              muted
-              loop
-              playsInline
-              poster="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
-              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.mp4"
-            >
-              Your browser does not support the video tag.
-            </video>
+            {videoError ? (
+              <img
+                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
+                alt="JCPenney POS interface demonstration"
+                className="w-full h-auto"
+              />
+            ) : (
+              <video
+                ref={videoRef}
+                className="w-full h-auto"
+                muted
+                loop
+                playsInline
+                poster="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
+                onError={() => setVideoError(true)}
+              >
+                <source
+                  src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
         </div>
       </section>
