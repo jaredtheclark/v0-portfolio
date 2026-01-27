@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { ContactModal } from "@/components/contact-modal"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronsDown } from "lucide-react"
 import { LinkedInButton } from "@/components/linkedin-button"
 
 // Lock icon SVG component
@@ -125,6 +125,21 @@ function SnapshotCard({
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
+  const scrollToCaseStudies = () => {
+    const caseStudiesSection = document.getElementById('case-studies')
+    const nav = document.querySelector('nav')
+    if (caseStudiesSection && nav) {
+      const navHeight = nav.offsetHeight
+      const elementPosition = caseStudiesSection.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -150,11 +165,13 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Button size="lg" asChild className="w-full md:w-auto">
-                <Link href="/case-studies" className="flex items-center justify-center gap-2">
-                  View Case Studies
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+              <Button
+                size="lg"
+                onClick={scrollToCaseStudies}
+                className="w-full md:w-auto flex items-center justify-center gap-2 cursor-pointer"
+              >
+                View Case Studies
+                <ChevronsDown className="h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -188,6 +205,7 @@ export default function HomePage() {
 
       {/* Case Study 1 - Unified Commerce Checkout Platform */}
       <section
+        id="case-studies"
         className="relative overflow-hidden"
         style={{
           background: "linear-gradient(252.86deg, var(--gradient-case-study-start) 0%, var(--gradient-case-study-end) 100%), var(--gradient-case-study-overlay)"
