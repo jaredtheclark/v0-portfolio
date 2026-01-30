@@ -38,7 +38,7 @@ export default function CaseStudiesPage() {
             outcome="Led UI design and design system creation for a national retailer's complete POS overhaul—from 20-year-old registers to mobile-first checkout across 650+ stores."
             metrics={[
               { value: "$6.2M", label: "Hardware savings" },
-              { value: "86", label: "Jobs discovered" },
+              { value: "86", label: "Workflows redesigned" },
               { value: "31+", label: "Stores launched" },
               { value: "4 mo", label: "Research to handoff" },
             ]}

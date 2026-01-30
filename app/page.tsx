@@ -243,7 +243,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
               <Metric value="$6.2M" label="Hardware savings" />
-              <Metric value="86" label="Jobs discovered" />
+              <Metric value="86" label="Workflows redesigned" />
               <Metric value="31+" label="Stores launched" />
               <Metric value="4 mo" label="Research to handoff" />
             </div>
