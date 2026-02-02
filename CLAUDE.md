@@ -11,20 +11,20 @@ This is a portfolio website for a Principal UX Product Designer, built with Next
 ## Development Commands
 
 \`\`\`bash
-# Install dependencies (uses Yarn)
-yarn install
+# Install dependencies (uses pnpm)
+pnpm install
 
 # Start development server
-yarn dev
+pnpm dev
 
 # Build for production
-yarn build
+pnpm build
 
 # Start production server
-yarn start
+pnpm start
 
 # Run linting
-yarn lint
+pnpm lint
 \`\`\`
 
 ## Tech Stack
@@ -34,8 +34,9 @@ yarn lint
 - **Styling**: Tailwind CSS v4 with custom design tokens
 - **UI Components**: shadcn/ui (New York style) + Radix UI primitives
 - **Fonts**: Poppins, Golos Text, Roboto Mono
-- **Package Manager**: Yarn 1.22.22
+- **Package Manager**: pnpm
 - **Analytics**: Vercel Analytics
+- **Email**: Resend (for contact form functionality)
 
 ## Architecture
 
@@ -120,6 +121,26 @@ The project is deployed on Vercel and linked to v0.app:
 - Changes from v0.app are automatically pushed to this repo
 - Vercel deploys from this repository
 - Vercel Analytics is integrated in the root layout
+
+### Environment Variables
+
+Environment variables are managed in Vercel's dashboard, NOT in the codebase:
+
+**Contact Form (Resend)**:
+- `RESEND_API_KEY` - API key for the Resend email service (used in `app/api/contact/route.ts`)
+- Stored in Vercel project settings → Environment Variables
+- Required for production builds and the contact form to function
+- NOT stored in `.env` files in the repository for security
+
+**Local Development**:
+- If you need to test the contact form locally, create a `.env.local` file (gitignored)
+- Add: `RESEND_API_KEY=re_your_key_here`
+- Never commit API keys to the repository
+
+**Build Errors**:
+- "Missing API key. Pass it to the constructor `new Resend("re_123")`" means the Resend API key is not available
+- This is expected in local builds without `.env.local` configured
+- Production builds on Vercel have access to the key via environment variables
 
 ## Portfolio-Specific Guidelines
 
