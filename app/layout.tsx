@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import { GrainCanvas } from "@/components/GrainCanvas"
+import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg"
 
 import "./globals.css"
 
@@ -33,9 +34,31 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Jared Clark | Principal Product Designer",
-  description: "Principal UX Product Designer specializing in enterprise fintech transformation.",
-  generator: "v0.app",
+  title: "Jared Clark | Product Designer",
+  description: "Product Designer specializing in enterprise fintech transformation.",
+  metadataBase: new URL("https://jaredclark.design"),
+  openGraph: {
+    title: "Jared Clark | Product Designer",
+    description: "Product Designer specializing in enterprise fintech transformation.",
+    url: "https://jaredclark.design",
+    siteName: "Jared Clark Design",
+    images: [
+      {
+        url: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/jaredclarkdesign-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Jared Clark - Product Designer portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jared Clark | Product Designer",
+    description: "Principal UX Product Designer specializing in enterprise fintech transformation.",
+    images: ["https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/jaredclarkdesign-og.png"],
+  },
 }
 
 export default function RootLayout({
@@ -46,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
+        <ConsoleEasterEgg />
         <GrainCanvas
           options={{
             opacity: 5,

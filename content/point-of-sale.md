@@ -8,7 +8,7 @@ Led UI design and design system creation for a national retailer's complete POS 
 
 | $6.2M | 86 | 31+ | 4 mo |
 |-------|-----|-----|------|
-| Hardware savings | Jobs discovered | Stores launched | Research to handoff |
+| Hardware savings | Workflows redesigned | Stores launched | Research to handoff |
 
 ---
 

@@ -154,10 +154,10 @@ export default function HomePage() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
                 <h1 className="text-[32px] md:text-[40px] lg:text-[56px] font-heading font-medium leading-[1.1] lg:leading-[60px] text-foreground">
-                  Hi, I'm Jared 👋
+                  Hi, I'm Jared 👨‍💻
                 </h1>
-                <p className="text-[20px] md:text-[24px] lg:text-[33px] font-heading font-normal leading-[1.4] lg:leading-[40px] text-foreground">
-                  I help teams solve the right problems, make strategic decisions, and ship design systems that scale.
+                <p className="text-[20px] md:text-[24px] lg:text-[33px] font-heading font-normal leading-[1.4] lg:leading-[40px] text-muted-foreground">
+                  I'm a <span className="text-foreground">design technologist</span> helping teams make strategic decisions, and ship <span className="text-foreground">design systems</span> that scale.
                 </p>
               </div>
               <p className="text-xs md:text-lg font-mono text-muted-foreground leading-6 lg:leading-7">
@@ -243,7 +243,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
               <Metric value="$6.2M" label="Hardware savings" />
-              <Metric value="86" label="Jobs discovered" />
+              <Metric value="86" label="Workflows redesigned" />
               <Metric value="31+" label="Stores launched" />
               <Metric value="4 mo" label="Research to handoff" />
             </div>
