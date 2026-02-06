@@ -229,16 +229,16 @@ export default function HomePage() {
               </span>
               <div className="flex flex-col gap-2">
                 <h3 className="text-[24px] md:text-[30px] font-heading font-semibold leading-tight lg:leading-none tracking-[-0.3px] text-foreground">
-                  Unified Commerce Checkout Platform
+                  Designing the Future of Retail Checkout
                 </h3>
                 <p className="text-base text-muted-foreground">
-                  JCPenney · Principal UX Architect · 2022
+                  JCPenney · Senior Product Designer · 2022
                 </p>
               </div>
             </div>
 
             <p className="text-base text-foreground leading-[26px]">
-              Led UI design and design system creation for a national retailer's complete POS overhaul—from 20-year-old registers to mobile-first checkout across 650+ stores.
+              Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale supporting a mobile-first checkout experience launched across 650+ stores.
             </p>
 
             <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
