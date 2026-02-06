@@ -148,13 +148,27 @@ export default function HomePage() {
       <section className="relative border-b border-border overflow-hidden" style={{
         background: "linear-gradient(251.79deg, var(--gradient-hero-start) 0%, var(--gradient-hero-end) 100%), var(--background)"
       }}>
-        <div className="max-w-6xl mx-auto px-6 py-8 lg:py-24 flex flex-col md:flex-row lg:items-center gap-8 lg:gap-16 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 md:px-[72px] py-8 lg:py-24 flex flex-col md:flex-row lg:items-center gap-8 lg:gap-16 relative z-10">
           {/* Content */}
-          <div className="flex-1 flex flex-col gap-6 lg:gap-8 lg:pb-6 order-1">
+          <div className="flex-1 flex flex-col gap-6 lg:gap-8 lg:pb-6 order-1 relative">
+            {/* Mobile headshot - absolutely positioned next to h1 */}
+            <div
+              className="absolute top-[-13px] right-0 w-[48px] h-[48px] rounded-full overflow-hidden bg-accent md:hidden z-10"
+              style={{
+                boxShadow: "8.813px 10.332px 18.324px 2.431px rgba(40, 60, 16, 0.32)"
+              }}
+            >
+              <img
+                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jared-clark-product-designer-2-RJplkdew5XUkwoZCQtJHK0GnYl8unP.jpg"
+                alt="Jared Clark, Product Designer"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h1 className="text-[32px] md:text-[40px] lg:text-[56px] font-heading font-medium leading-[1.1] lg:leading-[60px] text-foreground">
-                  Hi, I'm Jared 👨‍💻
+                <h1 className="text-[32px] md:text-[40px] lg:text-[56px] font-heading font-medium leading-[1.1] lg:leading-[60px] text-foreground pr-[75px] md:pr-0">
+                  Hi, I'm Jared
                 </h1>
                 <p className="text-[20px] md:text-[24px] lg:text-[33px] font-heading font-normal leading-[1.4] lg:leading-[40px] text-muted-foreground">
                   I'm a <span className="text-foreground">design technologist</span> helping teams make strategic decisions, and ship <span className="text-foreground">design systems</span> that scale.
@@ -176,10 +190,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Photo - Shows on right for tablet+, bottom-right for mobile */}
-          <div className="flex-shrink-0 flex justify-end order-2 lg:order-2">
+          {/* Photo - Hidden on mobile, shows on tablet+ */}
+          <div className="hidden md:flex flex-shrink-0 justify-end order-2 lg:order-2">
             <div
-              className="w-[124px] h-[200px] md:w-[124px] md:h-[200px] lg:w-[391px] lg:h-[391px] rounded-[1.5em] lg:rounded-full overflow-hidden bg-accent"
+              className="w-[124px] h-[200px] lg:w-[200px] lg:h-[320px] rounded-[1.5em] overflow-hidden bg-accent"
               style={{
                 boxShadow: "32.867px 38.533px 68.34px 9.067px rgba(40, 60, 16, 0.24)"
               }}
