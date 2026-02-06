@@ -362,13 +362,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-            {/* Follett Corporation */}
-            <SnapshotCard
-              title="Follett Corporation"
-              description="Service Design | Point of Sale"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
-              // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
-            />
+           
 
             {/* Walmart Information Security */}
             <SnapshotCard
@@ -376,7 +370,14 @@ export default function HomePage() {
               description="User Research | Design Systems"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.mp4"
-              isLocked={true}
+            />
+
+                     {/* Walmart Data Ventures Luminate */}
+            <SnapshotCard
+              title="Walmart Data Ventures Luminate"
+              description="Data Visualization | Prototyping"
+              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
             />
 
             {/* Walmart Legal Themis */}
@@ -385,16 +386,9 @@ export default function HomePage() {
               description="User Interface | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
               // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.mp4"
-              isLocked={true}
             />
 
-            {/* Walmart Data Ventures Luminate */}
-            <SnapshotCard
-              title="Walmart Data Ventures Luminate"
-              description="Data Visualization | Prototyping"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
-            />
+   
 
             {/* Handled Home */}
             <SnapshotCard
@@ -402,6 +396,13 @@ export default function HomePage() {
               description="Design Systems | Consumer App"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/Handled-movie-.mp4"
+            />
+             {/* Follett Corporation */}
+            <SnapshotCard
+              title="Follett Corporation"
+              description="Service Design | Point of Sale"
+              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
+              // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
             />
           </div>
         </div>
