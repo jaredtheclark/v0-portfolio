@@ -21,7 +21,7 @@ export function Footer() {
             <div className="flex flex-col gap-0.5">
               <span className="text-sm font-semibold text-[#fafafa]">Jared Clark</span>
               <span className="text-xs text-[#a3a3a3]">Principal Product Designer</span>
-              <span className="text-xs text-[#a3a3a3]">jared@jaredclark.design</span>
+              <span className="text-xs text-[#a3a3a3]"><a href="mailto:jared@jaredclark.design" className="text-[#a3a3a3] hover:text-[#fafafa] transition-colors">jared@jaredclark.design</a></span>
             </div>
           </div>
 
@@ -77,10 +77,10 @@ export function Footer() {
       {/* Lower footer */}
       <div className="border-t border-[#383838] px-6 md:px-36 py-8">
         <div className="flex flex-col gap-2 md:flex-row md:justify-between">
-          <p className="text-sm text-[#a3a3a3]">
+          <p className="text-xs text-[#a3a3a3]">
             Created with ⌨️, 🖱️, and 🤖 by Jared Clark 👨‍💻
           </p>
-          <p className="flex items-center gap-1 text-sm text-[#a3a3a3]">
+          <p className="flex items-center gap-1 text-xs text-[#a3a3a3]">
             <Copyright className="h-3.5 w-3.5" />
             Copyright Jared Clark 2026
           </p>
