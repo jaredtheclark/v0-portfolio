@@ -319,7 +319,7 @@ export default function PointOfSaleCaseStudy() {
       <section className="px-4 md:px-[72px] py-8 md:py-[72px] pb-12 md:pb-24">
         <div className="max-w-[1296px] mx-auto flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 lg:items-center">
           {/* Tablet Image */}
-          <div className="flex-1 relative overflow-hidden rounded-3xl lg:rounded-[32px] shadow-warm h-[284px] lg:h-[409px]">
+          <div className="flex-1 relative overflow-hidden rounded-3xl lg:rounded-[32px] shadow-warm h-[284px] lg:h-[409px]" style={{ minHeight: '284px' }}>
             <Image
               src={ASSETS.images.tablet}
               alt="JCPenney point of sale interface on tablet device"
