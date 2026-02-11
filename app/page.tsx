@@ -184,7 +184,7 @@ export default function HomePage() {
                 Design Systems | AI + Code | Design Strategy | UX Research
               </p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <Button
                 size="lg"
                 onClick={scrollToCaseStudies}
@@ -192,6 +192,17 @@ export default function HomePage() {
               >
                 View Case Studies
                 <ChevronsDown className="h-4 w-4" aria-hidden="true" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="w-full md:w-auto flex items-center justify-center gap-2"
+              >
+                <Link href="/about">
+                  About Me
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
               </Button>
             </div>
           </div>
