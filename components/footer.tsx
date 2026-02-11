@@ -31,7 +31,7 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#a3a3a3]">Learn</span>
               <Link href="/" className="text-sm text-[#d4d4d4] hover:text-[#fafafa] transition-colors">Home</Link>
-              <Link href="/about" className="text-sm text-[#d4d4d4] hover:text-[#fafafa] transition-colors">About Me</Link>
+              <Link href="/about" className="text-sm text-[#d4d4d4] hover:text-[#fafafa] transition-colors">About</Link>
             </div>
 
             {/* Portfolio */}

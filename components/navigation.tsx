@@ -33,7 +33,7 @@ export function Navigation() {
             </Button>
 
             <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/about") ? "text-foreground" : "text-muted-foreground"}>
-              <Link href="/about">About Me</Link>
+              <Link href="/about">About</Link>
             </Button>
 
             <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/resume") ? "text-foreground" : "text-muted-foreground"}>
