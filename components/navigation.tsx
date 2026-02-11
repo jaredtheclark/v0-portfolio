@@ -28,8 +28,8 @@ export function Navigation() {
           </Link>
 
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" asChild className={pathname === "/" ? "text-foreground" : "text-muted-foreground"}>
-              <Link href="/">Home</Link>
+            <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/case-studies") ? "text-foreground" : "text-muted-foreground"}>
+              <Link href="/case-studies">Case Studies</Link>
             </Button>
 
             <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/about") ? "text-foreground" : "text-muted-foreground"}>
