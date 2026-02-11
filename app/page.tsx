@@ -162,7 +162,7 @@ export default function HomePage() {
               }}
             >
               <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jared-clark-product-designer-2-RJplkdew5XUkwoZCQtJHK0GnYl8unP.jpg"
+                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/headshot-designer.jpg"
                 alt="Jared Clark, Product Designer"
                 fill
                 className="object-cover"
@@ -216,7 +216,7 @@ export default function HomePage() {
               }}
             >
               <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jared-clark-product-designer-2-RJplkdew5XUkwoZCQtJHK0GnYl8unP.jpg"
+                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/headshot-designer.jpg"
                 alt="Jared Clark, Product Designer"
                 fill
                 className="object-cover"
