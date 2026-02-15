@@ -39,6 +39,32 @@ function LockIcon({ className }: { className?: string }) {
   )
 }
 
+// Recommendation card component
+function RecommendationCard({
+  name,
+  role,
+  quote,
+}: {
+  name: string
+  role?: string
+  quote: React.ReactNode
+}) {
+  return (
+    <div className="flex flex-col gap-4 p-6 rounded-[4.8px] border border-border bg-white/5">
+      <p
+        className="text-base text-foreground leading-[1.6] flex-1"
+        style={{ textIndent: "-0.45em", paddingLeft: "0.45em" }}
+      >
+        &ldquo;{quote}&rdquo;
+      </p>
+      <div className="flex flex-col gap-0.5 pt-2 border-t border-border">
+        <p className="text-sm font-medium text-foreground">{name}</p>
+        {role && <p className="text-xs font-mono text-muted-foreground">{role}</p>}
+      </div>
+    </div>
+  )
+}
+
 // Case study metric component
 function Metric({ value, label }: { value: string; label: string }) {
   return (
@@ -240,71 +266,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Case Study 1 - Unified Commerce Checkout Platform */}
+         {/* Case Study 2 - Enterprise Payments Platform */}
       <section
         id="case-studies"
-        className="relative overflow-hidden"
-        style={{
-          background: "linear-gradient(252.86deg, var(--gradient-case-study-start) 0%, var(--gradient-case-study-end) 100%), var(--gradient-case-study-overlay)"
-        }}
-      >
-        <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
-          {/* Image - Shows below on mobile/tablet, left on desktop */}
-          <div className="flex-shrink-0 self-center lg:self-end order-2 lg:order-1">
-            <Image
-              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
-              alt="JCPenney POS device in hand"
-              width={373}
-              height={500}
-              className="w-full max-w-[200px] lg:max-w-[373px] lg:w-[373px]"
-              style={{ height: 'auto' }}
-            />
-          </div>
-
-          {/* Content */}
-          <div className="flex-1 py-8 lg:py-10 flex flex-col gap-2 order-1 lg:order-2">
-            <div className="flex flex-col gap-4 mb-2">
-              <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-muted-foreground rounded-lg bg-white/10">
-                Case Study
-              </span>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-[24px] md:text-[30px] font-heading font-semibold leading-tight lg:leading-none tracking-[-0.3px] text-foreground">
-                  Designing the Future of Retail Checkout
-                </h3>
-                <p className="text-base text-muted-foreground">
-                  JCPenney · Senior Product Designer · 2022
-                </p>
-              </div>
-            </div>
-
-            <p className="text-base text-foreground leading-[26px]">
-              Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale supporting a mobile-first checkout experience launched across 650+ stores.
-            </p>
-
-            <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
-              <Metric value="$6.2M" label="Hardware savings" />
-              <Metric value="86" label="Workflows redesigned" />
-              <Metric value="31+" label="Stores launched" />
-              <Metric value="4 mo" label="Research to handoff" />
-            </div>
-
-            <div>
-              <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
-                <Link href="/case-studies/point-of-sale" className="flex items-center justify-center gap-2">
-                  Read Case Study
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="border-t border-border" />
-
-      {/* Case Study 2 - Enterprise Payments Platform */}
-      <section
         className="relative border-b border-border overflow-hidden"
         style={{
           background: "linear-gradient(252.99deg, var(--gradient-case-study-end) 0%, var(--gradient-case-study-start) 100%), var(--gradient-case-study-overlay), var(--background)"
@@ -319,7 +283,7 @@ export default function HomePage() {
               </span>
               <div className="flex flex-col gap-2">
                 <h3 className="text-[24px] md:text-[30px] font-heading font-semibold leading-tight lg:leading-none tracking-[-0.3px] text-foreground">
-                  Enterprise Payments Platform
+                  Unifying Dealership, Digital, and Retail Payments for a National Auto Retailer
                 </h3>
                 <p className="text-base text-muted-foreground">
                   America's Car-Mart · Principal UX Architect · 2025
@@ -371,6 +335,70 @@ export default function HomePage() {
 
 
           
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-border" />
+
+  
+
+       {/* Case Study 1 - Unified Commerce Checkout Platform */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background: "linear-gradient(252.86deg, var(--gradient-case-study-start) 0%, var(--gradient-case-study-end) 100%), var(--gradient-case-study-overlay)"
+        }}
+      >
+        <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
+          {/* Image - Shows below on mobile/tablet, left on desktop */}
+          <div className="flex-shrink-0 self-center lg:self-end order-2 lg:order-1">
+            <Image
+              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
+              alt="JCPenney POS device in hand"
+              width={373}
+              height={500}
+              className="w-full max-w-[200px] lg:max-w-[373px] lg:w-[373px]"
+              style={{ height: 'auto' }}
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 py-8 lg:py-10 flex flex-col gap-2 order-1 lg:order-2">
+            <div className="flex flex-col gap-4 mb-2">
+              <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-muted-foreground rounded-lg bg-white/10">
+                Case Study
+              </span>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[24px] md:text-[30px] font-heading font-semibold leading-tight lg:leading-none tracking-[-0.3px] text-foreground">
+                  Designing the Future of Retail Checkout
+                </h3>
+                <p className="text-base text-muted-foreground">
+                  JCPenney · Staff Product Designer · 2022
+                </p>
+              </div>
+            </div>
+
+            <p className="text-base text-foreground leading-[26px]">
+              Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale supporting a mobile-first checkout experience launched across 650+ stores.
+            </p>
+
+            <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
+              <Metric value="$6.2M" label="Hardware savings" />
+              <Metric value="86" label="Workflows redesigned" />
+              <Metric value="31+" label="Stores launched" />
+              <Metric value="4 mo" label="Research to handoff" />
+            </div>
+
+            <div>
+              <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
+                <Link href="/case-studies/point-of-sale" className="flex items-center justify-center gap-2">
+                  Read Case Study
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -434,6 +462,67 @@ export default function HomePage() {
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
               // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Recommendations Section */}
+      <section className="py-20 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col gap-2 mb-12">
+            <h2 className="text-[30px] font-heading font-semibold leading-none tracking-[-0.3px] text-foreground">
+              Recommendations
+            </h2>
+            <p className="text-base text-muted-foreground max-w-[604px]">
+              What colleagues, managers, and clients have said about working with me.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <RecommendationCard
+              name="Tom Greever"
+              role="VP | Author, Articulating Design Decisions"
+              quote={<>Jared was the lead designer on a project that I oversaw—it was a great experience working with him. He is one of those <span className="font-semibold">rare designers who is talented at both visual design and the more technical aspects of design</span> that require knowledge of coding. He was not afraid to dabble in code-heavy environments, was an <span className="font-semibold">excellent champion for design systems</span>, and <span className="font-semibold">always delivered quality work</span>. He is kind, articulate, funny, and genuine.</>}
+            />
+            <RecommendationCard
+              name="John Whitman"
+              role="Director of Product"
+              quote={<>Jared brought <span className="font-semibold">exceptional strategic thinking and technical expertise</span> to this complex project. They architected an end-to-end experience that <span className="font-semibold">balanced user needs with business requirements and technical constraints</span>, ensuring our system was both intuitive and scalable. What set Jared apart was their collaborative approach. They <span className="font-semibold">worked seamlessly across all teams</span>—Business Analysts, Product Design, UX, Quality Assurance and Development—making complex UX concepts accessible to all stakeholders and maintaining alignment throughout the project.</>}
+            />
+            <RecommendationCard
+              name="Corey Campbell"
+              role="Director of Product Strategy & Design"
+              quote={<>Jared is an <span className="font-semibold">exceptional visual designer</span> and has robust experience in <span className="font-semibold">digital product design, design systems, branding, and even data visualization</span>. He amplifies this experience with <span className="font-semibold">strong familiarity in CSS and HTML as well as React</span>, making his ability to collaborate with engineering a breeze. His eye for well balanced design aesthetic takes his execution to the next level and sets him apart as a best in class UI designer. I would highly recommend Jared for a <span className="font-semibold">Digital Product Design leadership position</span> due to his deep experience across many industries in B2B, B2C, Enterprise, Startup, etc.</>}
+            />
+            <RecommendationCard
+              name="Hiba Murali"
+              role="Senior Product Designer"
+              quote={<>Jared is an amazingly dedicated and sharp colleague! He demonstrated the ability to <span className="font-semibold">break down complex feature requests into clean and intuitive designs</span> that sparked delight and excitement from stakeholders, and was able to <span className="font-semibold">communicate design ideas in a highly effective way</span>. Besides his top-notch design skills and genuine desire to do whatever it took to make the client happy, he also brought a sense of enthusiasm and camaraderie to the team. He <span className="font-semibold">happily mentored me on my design work and general career</span>. He is truly an excellent designer and an excellent human being!</>}
+            />
+            <RecommendationCard
+              name="Kathleen Radecki"
+              role="Program Manager"
+              quote={<>Jared possesses a <span className="font-semibold">remarkable ability to generate innovative ideas promptly</span> and readily <span className="font-semibold">collaborate with both development and product teams</span> to ensure our products align with customer usability goals and business objectives. His collaborative nature made working with him a seamless experience, and I have no reservations about working with Jared again on future projects.</>}
+            />
+            <RecommendationCard
+              name="Charles Gugino"
+              role="Technical Program Manager"
+              quote={<>Jared makes work fun and he gets it done. He was a key reason a <span className="font-semibold">0-to-1 startup went from concept to launch and revenue in 5 months</span>—and it <span className="font-semibold">exited two years later</span>. He has great ideas, he's fun to work with, I can't recommend him more highly.</>}
+            />
+            <RecommendationCard
+              name="Kendall Johnson"
+              role="Senior Product Designer"
+              quote={<>Jared is an <span className="font-semibold">incredibly attentive, thorough, and passionate</span> Product Designer. His <span className="font-semibold">commitment to his craft is inspiring</span> and is evident through the work that he produces. Not only is Jared extremely talented, but he is also a lot of fun to work with and brings amazing energy. I know he is going to do really, really big things!</>}
+            />
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <Button variant="outline" asChild className="flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/jaredclarkdesigner/details/recommendations/" target="_blank" rel="noopener noreferrer">
+                See all recommendations on LinkedIn
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>

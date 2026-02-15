@@ -41,7 +41,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-medium leading-none tracking-tight">
-              Enterprise Payments Modernization: Designing the Customer Payment Portal for Auto Loan Customers
+              Unifying Dealership, Digital, and Retail Payments for a National Auto Retailer
             </h1>
             <p className="text-lg text-muted-foreground">
               Principal UX Architect · Enterprise Payments Modernization · 2025

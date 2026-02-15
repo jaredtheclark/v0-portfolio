@@ -122,7 +122,7 @@ export default function PointOfSaleCaseStudy() {
               Designing the Future of Retail Checkout
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-[1.5] md:leading-7">
-              Senior UX Designer · 2022
+              Staff Product Designer · 2022
             </p>
             <p className="text-sm md:text-base text-foreground leading-5 md:leading-6 max-w-[770px] pr-0 md:pr-[72px]">
               Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale software, hardware, and network infrastructure supporting a mobile-first checkout experience launched across 650+ stores.
