@@ -34,7 +34,7 @@ export function ConsoleEasterEgg() {
     // )
 
     console.log(
-      '\n%cLike my site? Check out the source at https://github.com/jaredtheclark/v0-portfolio \n',
+      '\n%cLike my site? Check out the source at https://github.com/jaredtheclark/portfolio \n',
       'color: #949494; font-size: 20px; font-family: Courier New;'
     )
   }, [])
