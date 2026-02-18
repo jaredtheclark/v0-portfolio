@@ -5,7 +5,10 @@
       "mcp__figma__get_screenshot",
       "Bash(cat:*)",
       "Bash(tr:*)",
-      "mcp__figma__get_metadata"
+      "mcp__figma__get_metadata",
+      "Bash(gh issue create:*)",
+      "mcp__figma__generate_figma_design",
+      "Bash(pnpm build:*)"
     ]
   }
 }
