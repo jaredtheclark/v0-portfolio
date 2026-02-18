@@ -16,6 +16,7 @@ export function Footer() {
                 alt="Jared Clark"
                 fill
                 className="object-cover"
+                sizes="48px"
               />
             </div>
             <div className="flex flex-col gap-0.5">
