@@ -212,7 +212,16 @@
 
 @layer base {
   html {
+    overflow-y: scroll;
     scrollbar-gutter: stable;
+  }
+
+  /* Radix Dialog scroll-lock injects padding-right to compensate for hiding the
+     body scrollbar. Since our scrollbar lives on <html> (always visible), no
+     compensation is needed — zeroing it out prevents the layout shift. */
+  body[data-scroll-locked] {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
   }
 
   * {
@@ -268,6 +277,11 @@
 
 /* Adding animation utilities and keyframes */
 @layer utilities {
+  /* Shake animation for wrong password */
+  .animate-shake {
+    animation: shake 0.4s ease-in-out;
+  }
+
   /* Fade in animation */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
@@ -316,6 +330,14 @@
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
 }
 
 @keyframes fadeIn {

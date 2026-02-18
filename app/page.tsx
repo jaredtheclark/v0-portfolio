@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
@@ -9,6 +9,24 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronsDown } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+
+// Types for snapshot article content
+type SnapshotArticleBlock = {
+  heading?: string
+  body?: string
+  image?: { src: string; alt: string; caption?: string }
+}
+
+type SnapshotArticle = {
+  summary: string
+  blocks: SnapshotArticleBlock[]
+}
 
 // Lock icon SVG component
 function LockIcon({ className }: { className?: string }) {
@@ -82,15 +100,26 @@ function SnapshotCard({
   imageSrc,
   videoSrc,
   isLocked = false,
+  article,
+  isGloballyUnlocked,
+  onUnlock,
 }: {
   title: string
   description: string
   imageSrc: string
   videoSrc?: string
   isLocked?: boolean
+  article?: SnapshotArticle
+  isGloballyUnlocked?: boolean
+  onUnlock?: () => void
 }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [password, setPassword] = useState("")
+  const [pwError, setPwError] = useState(false)
+  const [pwLoading, setPwLoading] = useState(false)
+  const [shakeKey, setShakeKey] = useState(0)
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -107,52 +136,227 @@ function SnapshotCard({
     }
   }
 
+  const handleOpenModal = () => {
+    setModalOpen(true)
+    setPassword("")
+    setPwError(false)
+  }
+
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!password.trim()) return
+    setPwLoading(true)
+    setPwError(false)
+    try {
+      const res = await fetch("/api/snapshot-access", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: password.trim(), snapshotTitle: title }),
+      })
+      if (res.ok) {
+        onUnlock?.()
+      } else {
+        setPwError(true)
+        setShakeKey((k) => k + 1)
+        setPassword("")
+      }
+    } catch {
+      setPwError(true)
+      setShakeKey((k) => k + 1)
+    } finally {
+      setPwLoading(false)
+    }
+  }
+
+  const showArticle = article && (!isLocked || isGloballyUnlocked)
+
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex-1">
-          <h5 className="text-base font-medium text-foreground">{title}</h5>
-          <p className="text-base font-mono text-muted-foreground">{description}</p>
-        </div>
-        {isLocked && (
-          <div className="flex-shrink-0 bg-muted rounded-full p-2">
-            <LockIcon />
+    <>
+      <div className="flex flex-col gap-2 cursor-pointer group" onClick={handleOpenModal} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && handleOpenModal()}>
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex-1">
+            <h5 className="text-base font-medium text-foreground group-hover:text-primary transition-colors">{title}</h5>
+            <p className="text-base font-mono text-muted-foreground">{description}</p>
           </div>
-        )}
+          {isLocked && (
+            <div className="flex-shrink-0 bg-muted rounded-full p-2">
+              <LockIcon />
+            </div>
+          )}
+        </div>
+        <div
+          className="overflow-hidden rounded-[4.8px] aspect-[16/10] relative"
+          onMouseEnter={videoSrc ? handleMouseEnter : undefined}
+          onMouseLeave={videoSrc ? handleMouseLeave : undefined}
+        >
+          {videoSrc && (
+            <video
+              ref={videoRef}
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+          )}
+          <Image
+            src={imageSrc}
+            alt={`${title} project preview`}
+            fill
+            className={`object-cover ${
+              videoSrc
+                ? `absolute inset-0 transition-opacity duration-200 ${isHovered ? 'opacity-0 ease-out' : 'opacity-100 ease-in'}`
+                : ''
+            }`}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
       </div>
-      <div
-        className="overflow-hidden rounded-[4.8px] aspect-[16/10] relative"
-        onMouseEnter={videoSrc ? handleMouseEnter : undefined}
-        onMouseLeave={videoSrc ? handleMouseLeave : undefined}
-      >
-        {videoSrc && (
-          <video
-            ref={videoRef}
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        )}
-        <Image
-          src={imageSrc}
-          alt={`${title} project preview`}
-          fill
-          className={`object-cover ${
-            videoSrc
-              ? `absolute inset-0 transition-opacity duration-200 ${isHovered ? 'opacity-0 ease-out' : 'opacity-100 ease-in'}`
-              : ''
-          }`}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      </div>
-    </div>
+
+      <Dialog open={modalOpen} onOpenChange={(open) => {
+        setModalOpen(open)
+        if (!open) {
+          setPassword("")
+          setPwError(false)
+        }
+      }}>
+        <DialogContent className="sm:max-w-2xl overflow-y-auto max-h-[85vh]">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 font-heading text-xl">
+              {title}
+              {isLocked && !isGloballyUnlocked && <LockIcon className="inline-block opacity-60" />}
+            </DialogTitle>
+            <p className="text-sm font-mono text-muted-foreground pt-1">{description}</p>
+          </DialogHeader>
+
+          <div className="border-t border-border mt-1 pt-4 flex flex-col gap-4">
+            {showArticle ? (
+              <>
+                <p className="text-base text-muted-foreground leading-relaxed">{article.summary}</p>
+                {article.blocks.map((block, i) => (
+                  <div key={i} className="flex flex-col gap-2">
+                    {block.image && (
+                      <figure className="flex flex-col gap-1">
+                        <Image
+                          src={block.image.src}
+                          alt={block.image.alt}
+                          width={800}
+                          height={500}
+                          className="w-full rounded-sm object-cover"
+                        />
+                        {block.image.caption && (
+                          <figcaption className="text-sm italic text-muted-foreground">{block.image.caption}</figcaption>
+                        )}
+                      </figure>
+                    )}
+                    {block.heading && (
+                      <h3 className="text-lg font-semibold font-heading mt-2">{block.heading}</h3>
+                    )}
+                    {block.body && (
+                      <p className="text-base leading-relaxed">{block.body}</p>
+                    )}
+                  </div>
+                ))}
+              </>
+            ) : isLocked ? (
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                  <p className="text-base leading-relaxed">
+                    This project is covered by a Non-Disclosure Agreement.
+                  </p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    To discuss this project, reach out at{" "}
+                    <button
+                      className="text-primary underline underline-offset-2 cursor-pointer"
+                      onClick={() => {
+                        setModalOpen(false)
+                        setTimeout(() => {
+                          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                        }, 200)
+                      }}
+                    >
+                      Say Hello
+                    </button>
+                    .
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 h-px bg-border" />
+                  <span className="text-xs text-muted-foreground font-mono">or</span>
+                  <div className="flex-1 h-px bg-border" />
+                </div>
+
+                <form onSubmit={handlePasswordSubmit} className="flex flex-col gap-3">
+                  <label className="text-sm font-medium text-foreground" htmlFor="snapshot-password">
+                    Enter access password
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      key={shakeKey}
+                      id="snapshot-password"
+                      type="password"
+                      value={password}
+                      onChange={(e) => { setPassword(e.target.value); setPwError(false) }}
+                      placeholder="Password"
+                      autoComplete="off"
+                      className={`flex-1 h-9 rounded-md border px-3 text-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors ${
+                        pwError
+                          ? "border-destructive animate-shake"
+                          : "border-input"
+                      }`}
+                    />
+                    <Button type="submit" size="sm" disabled={pwLoading || !password.trim()}>
+                      {pwLoading ? "..." : "Unlock"}
+                      {!pwLoading && <ArrowRight className="h-3 w-3 ml-1" />}
+                    </Button>
+                  </div>
+                  {pwError && (
+                    <p className="text-sm text-destructive">Incorrect password. Try again.</p>
+                  )}
+                </form>
+              </div>
+            ) : (
+              <p className="text-base text-muted-foreground leading-relaxed">
+                No additional content available for this project.
+              </p>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   )
 }
 
 export default function HomePage() {
+  const [isUnlocked, setIsUnlocked] = useState(false)
+
+  useEffect(() => {
+    if (sessionStorage.getItem('snapshot_unlocked') === 'true') {
+      setIsUnlocked(true)
+    }
+  }, [])
+
+  const handleUnlock = () => {
+    setIsUnlocked(true)
+    sessionStorage.setItem('snapshot_unlocked', 'true')
+  }
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      (window as Window & { clearSnapshotAccess?: () => void }).clearSnapshotAccess = () => {
+        sessionStorage.removeItem('snapshot_unlocked')
+        setIsUnlocked(false)
+        console.log('[dev] snapshot_unlocked cleared')
+      }
+      console.log(
+        '%c clearSnapshotAccess() %c reset snapshot session lock',
+        'background:#1a1a1a;color:#22d3ee;font-family:monospace;padding:2px 6px;border-radius:3px;border:1px solid #22d3ee',
+        'color:#737373;font-family:monospace'
+      )
+    }
+  }, [])
 
   const scrollToCaseStudies = () => {
     const caseStudiesSection = document.getElementById('case-studies')
@@ -193,7 +397,6 @@ export default function HomePage() {
                 fill
                 className="object-cover"
                 sizes="48px"
-                priority
               />
             </div>
 
@@ -352,14 +555,14 @@ export default function HomePage() {
       >
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
           {/* Image - Shows below on mobile/tablet, left on desktop */}
-          <div className="flex-shrink-0 self-center lg:self-end order-2 lg:order-1">
+          <div className="flex-shrink-0 self-center lg:self-end order-2 lg:order-1 w-full max-w-[200px] lg:max-w-[373px]">
             <Image
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
               alt="JCPenney POS device in hand"
               width={373}
               height={500}
-              className="w-full max-w-[200px] lg:max-w-[373px] lg:w-[373px]"
-              style={{ height: 'auto' }}
+              className="w-full h-auto"
+              sizes="(max-width: 1024px) 200px, 373px"
             />
           </div>
 
@@ -428,14 +631,54 @@ export default function HomePage() {
               description="User Research | Design Systems"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.mp4"
+              isLocked
+              isGloballyUnlocked={isUnlocked}
+              onUnlock={handleUnlock}
+              article={{
+                summary: "Led UX research and design systems work for Walmart's Information Security division, creating tools that helped security teams triage and respond to threats more effectively.",
+                blocks: [
+                  {
+                    heading: "The Challenge",
+                    body: "Security analysts were working across fragmented dashboards with inconsistent UI patterns, slowing response times and increasing cognitive load during high-stakes incidents.",
+                  },
+                  {
+                    heading: "Approach",
+                    body: "Conducted contextual inquiry sessions with security analysts to map workflows, identify pain points, and define a shared design language for the security tooling ecosystem.",
+                  },
+                  {
+                    heading: "Outcome",
+                    body: "Delivered a unified component library and interaction patterns adopted across three internal security products, reducing analyst onboarding time and improving incident response workflows.",
+                  },
+                ],
+              }}
             />
 
-                     {/* Walmart Data Ventures Luminate */}
+            {/* Walmart Data Ventures Luminate */}
             <SnapshotCard
               title="Walmart Data Ventures Luminate"
               description="Data Visualization | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
+              isLocked
+              isGloballyUnlocked={isUnlocked}
+              onUnlock={handleUnlock}
+              article={{
+                summary: "Designed data visualization interfaces for Walmart Data Ventures' Luminate platform, helping CPG brands understand shopper behavior through retail data insights.",
+                blocks: [
+                  {
+                    heading: "The Challenge",
+                    body: "Brand partners needed intuitive access to complex retail data—purchase trends, basket analysis, and shopper segmentation—without requiring deep data science expertise.",
+                  },
+                  {
+                    heading: "Approach",
+                    body: "Prototyped multiple visualization paradigms through rapid iteration, testing with brand analysts to find the right balance of depth and accessibility. Built high-fidelity interactive prototypes in Figma for stakeholder alignment.",
+                  },
+                  {
+                    heading: "Outcome",
+                    body: "Shipped a data exploration interface that increased platform engagement among brand partners and became the foundation for Luminate's self-serve analytics experience.",
+                  },
+                ],
+              }}
             />
 
             {/* Walmart Legal Themis */}
@@ -443,10 +686,27 @@ export default function HomePage() {
               title="Walmart Legal Themis"
               description="User Interface | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
-              // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.mp4"
+              isLocked
+              isGloballyUnlocked={isUnlocked}
+              onUnlock={handleUnlock}
+              article={{
+                summary: "Designed the UI for Themis, Walmart's internal legal matter management platform, streamlining how legal teams track cases, deadlines, and document workflows.",
+                blocks: [
+                  {
+                    heading: "The Challenge",
+                    body: "Walmart's legal department was managing complex litigation and compliance matters across spreadsheets and disconnected systems, creating risk and inefficiency at scale.",
+                  },
+                  {
+                    heading: "Approach",
+                    body: "Collaborated with legal operations stakeholders to map matter lifecycle workflows, then designed an interface system that surfaced the right information at each stage without overwhelming users.",
+                  },
+                  {
+                    heading: "Outcome",
+                    body: "Delivered a production-ready UI that consolidated matter tracking, document management, and deadline visibility into a single workflow-driven interface.",
+                  },
+                ],
+              }}
             />
-
-   
 
             {/* Handled Home */}
             <SnapshotCard
@@ -454,13 +714,51 @@ export default function HomePage() {
               description="Design Systems | Consumer App"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/Handled-movie-.mp4"
+              isGloballyUnlocked={isUnlocked}
+              onUnlock={handleUnlock}
+              article={{
+                summary: "Built the design system and consumer-facing mobile app for Handled Home, a moving services startup that went from concept to launch and exit in under two years.",
+                blocks: [
+                  {
+                    heading: "The Challenge",
+                    body: "As the founding designer, I needed to establish a complete design language and component library from scratch while simultaneously shipping product features on an aggressive startup timeline.",
+                  },
+                  {
+                    heading: "Approach",
+                    body: "Created a token-based design system in Figma that mapped directly to React Native components, enabling rapid feature development. Designed the full consumer booking flow, service customization, and real-time tracking experience.",
+                  },
+                  {
+                    heading: "Outcome",
+                    body: "Launched the app to market in 5 months. The startup achieved revenue and exited two years later. The design system enabled a small team to ship at startup velocity without sacrificing quality.",
+                  },
+                ],
+              }}
             />
-             {/* Follett Corporation */}
+
+            {/* Follett Corporation */}
             <SnapshotCard
               title="Follett Corporation"
               description="Service Design | Point of Sale"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
-              // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
+              isGloballyUnlocked={isUnlocked}
+              onUnlock={handleUnlock}
+              article={{
+                summary: "Redesigned point-of-sale and service workflows for Follett Corporation, one of the largest campus retail and library services companies in North America.",
+                blocks: [
+                  {
+                    heading: "The Challenge",
+                    body: "Follett's campus bookstore POS systems were aging and inconsistent across locations, creating friction for both store associates and students during high-volume periods like back-to-school.",
+                  },
+                  {
+                    heading: "Approach",
+                    body: "Conducted service design research across multiple campus locations, mapping associate workflows and student journeys. Used journey mapping and service blueprints to identify systemic failure points.",
+                  },
+                  {
+                    heading: "Outcome",
+                    body: "Delivered redesigned POS workflows and a service design blueprint adopted for Follett's next-generation store technology rollout, improving transaction speed and reducing associate training time.",
+                  },
+                ],
+              }}
             />
           </div>
         </div>
