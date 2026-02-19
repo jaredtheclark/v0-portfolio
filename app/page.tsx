@@ -587,10 +587,10 @@ export default function HomePage() {
             </p>
 
             <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
+              <Metric value="+15%" label="Transaction throughput" />
               <Metric value="$6.2M" label="Hardware savings" />
               <Metric value="86" label="Workflows redesigned" />
-              <Metric value="31+" label="Stores launched" />
-              <Metric value="4 mo" label="Research to handoff" />
+              <Metric value="650+" label="Stores launched" />
             </div>
 
             <div>
