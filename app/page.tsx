@@ -333,7 +333,7 @@ function SnapshotCard({
                   </a>
                   {" "}or{" "}
                   <a
-                    href="https://www.linkedin.com/in/jaredclarkdesign/"
+                    href="https://www.linkedin.com/in/jaredclarkdesigner/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground underline underline-offset-2"
