@@ -795,15 +795,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "Brand partners needed intuitive access to complex retail data—purchase trends, basket analysis, and shopper segmentation—without requiring deep data science expertise.",
+                    body: "Walmart Data Ventures was building Luminate, a first-of-its-kind platform giving suppliers access to Walmart's rich first-party data. Channel Performance, one of its core modules, needed to surface complex omnichannel metrics across in-store, delivery, pickup, and ship-to-home in a way that was clear and actionable for suppliers ranging from global CPG brands to small businesses. Data-dense dashboards carry a consistent risk: too much noise obscures the signal that drives decisions.",
                   },
                   {
-                    heading: "Approach",
-                    body: "Prototyped multiple visualization paradigms through rapid iteration, testing with brand analysts to find the right balance of depth and accessibility. Built high-fidelity interactive prototypes in Figma for stakeholder alignment.",
+                    heading: "The Approach",
+                    body: "I worked alongside a data visualization specialist researcher to shape the information architecture of Channel Performance, ensuring the structure of the product matched how suppliers actually needed to interrogate their data. As launch approached, my focus shifted to building the data visualization components themselves; charts and graphs designed to flex across different data contexts while maintaining a consistent source of truth. To prepare, I studied Steven Few's Now You See It and Information Dashboard Design, grounding the work in established principles of perceptual efficiency and dashboard clarity. The Figma environment was built to handoff-ready standards, as it would be inherited by Walmart's internal design teams. Every component, variable, and annotation had to be pristine.",
                   },
                   {
-                    heading: "Outcome",
-                    body: "Shipped a data exploration interface that increased platform engagement among brand partners and became the foundation for Luminate's self-serve analytics experience.",
+                    heading: "The Outcome",
+                    body: "Channel Performance launched as part of Walmart Luminate in early 2022 and became a cornerstone of the platform. Walmart Data Ventures grew its client base by 173% and saw 100% renewal from existing subscribers, many signing on for three years or longer. The platform has since expanded to Mexico and Canada, rebranding as Scintilla in 2025 to support its global ambitions.",
                   },
                 ],
               }}
