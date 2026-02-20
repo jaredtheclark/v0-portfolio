@@ -15,7 +15,7 @@ Recent highlights:
 - Led point-of-sale redesigns for JCPenney and Follett across retail and enterprise environments
 - Design system governance and user research at Walmart (Information Security, Legal, Data Ventures)
 
-I'm currently looking for my next role building teams and shaping product strategy. Connect on [LinkedIn](https://linkedin.com/in/jaredclark).
+I'm currently looking for my next role building teams and shaping product strategy. Connect on [LinkedIn](https://www.linkedin.com/in/jaredclarkdesigner/).
 
 ---
 

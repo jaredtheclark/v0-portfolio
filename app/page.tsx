@@ -333,7 +333,7 @@ function SnapshotCard({
                   </a>
                   {" "}or{" "}
                   <a
-                    href="https://www.linkedin.com/in/jaredclarkdesign/"
+                    href="https://www.linkedin.com/in/jaredclarkdesigner/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground underline underline-offset-2"
@@ -348,11 +348,9 @@ function SnapshotCard({
                   <div className="relative w-full aspect-[16/10] rounded-[4.8px] overflow-hidden">
                     {videoSrc ? (
                       <video
-                        ref={modalVideoRef}
                         muted
                         loop
                         playsInline
-                        autoPlay
                         className="w-full h-full object-cover"
                       >
                         <source src={videoSrc} type="video/mp4" />
@@ -766,15 +764,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "Security analysts were working across fragmented dashboards with inconsistent UI patterns, slowing response times and increasing cognitive load during high-stakes incidents.",
+                    body: "Walmart Global Tech's security analysts process 6 trillion data points a year across a global network of security operations centers. The internal microservice tools they used to detect and investigate threats couldn't keep up. One key scanning application gave analysts no visibility into system status; they were left refreshing pages and hunting manually for data while the clock ran on time-sensitive decisions. Walmart's Living Design System wasn't built for this class of tooling, so the team needed a different path.",
                   },
                   {
-                    heading: "Approach",
-                    body: "Conducted contextual inquiry sessions with security analysts to map workflows, identify pain points, and define a shared design language for the security tooling ecosystem.",
+                    heading: "The Approach",
+                    body: "Before opening Figma, I helped the security department work through a design system decision. I recommended Elastic UI based on the nature of their tooling, and the team adopted it. From there I embedded on the security floor, interviewed analysts about how they actually worked, scrubbed sensitive details from my notes, and synthesized findings into something actionable. I submitted product updates to Jira throughout to keep leadership aligned. Working alongside an internal designer, I anchored patterns to what SOC analysts already knew, keeping the cognitive load low. On the scanning tool, I redesigned the UI around real-time reactivity: loading states at both the page and component level, so system status was always visible without a manual refresh. I ran user testing with analysts to validate the work, then collaborated closely with a frontend and backend developer to make sure the build matched spec.",
                   },
                   {
-                    heading: "Outcome",
-                    body: "Delivered a unified component library and interaction patterns adopted across three internal security products, reducing analyst onboarding time and improving incident response workflows.",
+                    heading: "The Outcome",
+                    body: "Analysts got tools that matched the pace and precision their work actually requires: clear system feedback, less friction, and interfaces built around the workflows they already had. The design system recommendation gave the security department a foundation they can build on. The Figma deliverables were handed off at a standard internal teams could own and extend without starting over.",
                   },
                 ],
               }}
@@ -795,15 +793,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "Brand partners needed intuitive access to complex retail data—purchase trends, basket analysis, and shopper segmentation—without requiring deep data science expertise.",
+                    body: "Walmart Data Ventures was building Luminate, a first-of-its-kind platform giving suppliers access to Walmart's rich first-party data. Channel Performance, one of its core modules, needed to surface complex omnichannel metrics across in-store, delivery, pickup, and ship-to-home in a way that was clear and actionable for suppliers ranging from global CPG brands to small businesses. Data-dense dashboards carry a consistent risk: too much noise obscures the signal that drives decisions.",
                   },
                   {
-                    heading: "Approach",
-                    body: "Prototyped multiple visualization paradigms through rapid iteration, testing with brand analysts to find the right balance of depth and accessibility. Built high-fidelity interactive prototypes in Figma for stakeholder alignment.",
+                    heading: "The Approach",
+                    body: "I worked alongside a data visualization specialist researcher to shape the information architecture of Channel Performance, ensuring the structure of the product matched how suppliers actually needed to interrogate their data. As launch approached, my focus shifted to building the data visualization components themselves; charts and graphs designed to flex across different data contexts while maintaining a consistent source of truth. To prepare, I studied Steven Few's Now You See It and Information Dashboard Design, grounding the work in established principles of perceptual efficiency and dashboard clarity. The Figma environment was built to handoff-ready standards, as it would be inherited by Walmart's internal design teams. Every component, variable, and annotation had to be pristine.",
                   },
                   {
-                    heading: "Outcome",
-                    body: "Shipped a data exploration interface that increased platform engagement among brand partners and became the foundation for Luminate's self-serve analytics experience.",
+                    heading: "The Outcome",
+                    body: "Channel Performance launched as part of Walmart Luminate in early 2022 and became a cornerstone of the platform. Walmart Data Ventures grew its client base by 173% and saw 100% renewal from existing subscribers, many signing on for three years or longer. The platform has since expanded to Mexico and Canada, rebranding as Scintilla in 2025 to support its global ambitions.",
                   },
                 ],
               }}
@@ -850,15 +848,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "As the founding designer, I needed to establish a complete design language and component library from scratch while simultaneously shipping product features on an aggressive startup timeline.",
+                    body: "As a founding product designer, I needed to establish a complete design language and component library that supported product interactions while aligning with brand design. This design system needed to integrate simultaneously while our product team shipped product features on an aggressive startup timeline.",
                   },
                   {
                     heading: "Approach",
-                    body: "Created a token-based design system in Figma that mapped directly to React Native components, enabling rapid feature development. Designed the full consumer booking flow, service customization, and real-time tracking experience.",
+                    body: "Created a token-based design system in Figma and worked with development to map these to React Native components, to enable the same rapid feature development in design tools and in code. I later designed the consumer booking flow, service customization, and real-time tracking experience in the application. Customers could book a move, document their possessions, and track them as they were trucked across the country.",
                   },
                   {
                     heading: "Outcome",
-                    body: "Launched the app to market in 5 months. The startup achieved revenue and exited two years later. The design system enabled a small team to ship at startup velocity without sacrificing quality.",
+                    body: "Handled launched to market in five months. The startup reached revenue and was acquired two years later. I designed the UI system to support white-labeling, then worked with the acquiring company to roll out the service across their national brands.",
                   },
                 ],
               }}
@@ -878,15 +876,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "Follett's campus bookstore POS systems were aging and inconsistent across locations, creating friction for both store associates and students during high-volume periods like back-to-school.",
+                    body: "Follett Higher Education runs campus retail at scale: 1,000+ stores, course materials, book and software rentals, and high-volume events like pop-ups and sporting events. Their existing POS couldn't flex to meet those demands. Checkout was a bottleneck.",
                   },
                   {
-                    heading: "Approach",
-                    body: "Conducted service design research across multiple campus locations, mapping associate workflows and student journeys. Used journey mapping and service blueprints to identify systemic failure points.",
+                    heading: "The Approach",
+                    body: "I led UI design alongside a UX researcher. We ran Jobs to be Done sessions and ORCA workshops, then I modeled Follett's operational systems as Figma objects using variables. Prototypes pulled from realistic data tied to actual use cases, giving stakeholders something to evaluate against their real workflows rather than a demo.",
                   },
                   {
-                    heading: "Outcome",
-                    body: "Delivered redesigned POS workflows and a service design blueprint adopted for Follett's next-generation store technology rollout, improving transaction speed and reducing associate training time.",
+                    heading: "The Outcome",
+                    body: "Follett selected GK Software as their new cloud-based POS provider and built on my custom UI instead of GK's default interface. The design targeted their specific rental and course materials workflows. It runs on a dockable tablet that supports additional hardware, deployed across 1,000+ stores, pop-up shops, and sporting arenas serving over six million students.",
                   },
                 ],
               }}
