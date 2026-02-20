@@ -585,10 +585,24 @@ export default function HomePage() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
+          {/* Mobile Image - Shows at top on mobile only */}
+          <div className="lg:hidden pt-6">
+            <div className="rounded-[16px] flex items-end justify-center overflow-hidden" style={{ backgroundColor: "var(--case-study-image-bg-1)" }}>
+              <Image
+                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/acm-ipad-mobile-qDSyOGHv3LuyZIutCftZjlgMmqcZyo.png"
+                alt="Enterprise Payments Platform interface on iPad"
+                width={382}
+                height={232}
+                className="w-full max-w-[382px]"
+                style={{ filter: "drop-shadow(0px 1.5px 7.5px rgba(0, 0, 0, 0.25))" }}
+              />
+            </div>
+          </div>
+
           {/* Content */}
-          <div className="flex-1 py-8 lg:py-32 flex flex-col gap-2 order-1">
+          <div className="flex-1 py-6 lg:py-32 flex flex-col gap-2">
             <div className="flex flex-col gap-4 mb-2">
-              <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-muted-foreground rounded-lg bg-white/10">
+              <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-border rounded-lg bg-white/10">
                 Case Study
               </span>
               <div className="flex flex-col gap-2">
@@ -605,7 +619,7 @@ export default function HomePage() {
               Launched a zero-to-one payments platform in four months achieving 200% increase in auto pay enrollment.
             </p>
 
-            <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
+            <div className="grid grid-cols-4 gap-4 py-4">
               <Metric value="200%" label="Autopay increase" />
               <Metric value="15%" label="Portal growth" />
               <Metric value="4 mo" label="Delivery time" />
@@ -613,38 +627,26 @@ export default function HomePage() {
             </div>
 
             <div>
-              <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
+              <Button variant="outline" asChild className="w-full lg:w-auto border-border shadow-sm bg-white/10">
                 <Link href="/case-studies/enterprise-payments-platform" className="flex items-center justify-center gap-2">
                   Read Case Study
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-6 w-6" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Image - Single responsive image that overflows right and bottom on desktop */}
-          <div className="flex-1 flex justify-center order-2">
+          {/* Desktop Image - Shows on right on desktop only */}
+          <div className="hidden lg:flex flex-1 justify-center">
             <Image
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/ACM-iPad-fimEV8EFeOBpxGUooPLPYfiqpQNCgU.png"
               alt="Enterprise Payments Platform interface on iPad"
               width={909}
               height={710}
-              className="hidden lg:inline lg:left-0 top-0 lg:top-[48px] w-[417px] md:w-[500px] lg:w-[909px] xl:w-[70vw] origin-top-left lg:scale-200"
+              className="lg:left-0 top-0 lg:top-[48px] lg:w-[909px] xl:w-[70vw] origin-top-left lg:scale-200"
               style={{ filter: "drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25))" }}
             />
-            <Image
-              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/acm-ipad-mobile-qDSyOGHv3LuyZIutCftZjlgMmqcZyo.png"
-              alt="Enterprise Payments Platform interface on iPad"
-              width={500}
-              height={350}
-              className="lg:hidden w-[417px] md:w-[500px]"
-              style={{ filter: "drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25))", height: 'auto' }}
-            />
           </div>
-
-
-
-          
         </div>
       </section>
 
@@ -661,22 +663,34 @@ export default function HomePage() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
-          {/* Image - Shows below on mobile/tablet, left on desktop */}
-          <div className="flex-shrink-0 self-center lg:self-end order-2 lg:order-1 w-full max-w-[200px] lg:max-w-[373px]">
+          {/* Mobile Image - Shows at top on mobile only */}
+          <div className="lg:hidden pt-6">
+            <div className="rounded-[16px] flex items-end justify-center" style={{ backgroundColor: "var(--case-study-image-bg-2)" }}>
+              <Image
+                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
+                alt="JCPenney POS device in hand"
+                width={190}
+                height={229}
+                className="w-[190px] h-auto"
+              />
+            </div>
+          </div>
+
+          {/* Desktop Image - Shows on left on desktop only */}
+          <div className="hidden lg:flex flex-shrink-0 self-end">
             <Image
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
               alt="JCPenney POS device in hand"
               width={373}
               height={500}
-              className="w-full h-auto"
-              sizes="(max-width: 1024px) 200px, 373px"
+              className="w-full max-w-[373px] h-auto"
             />
           </div>
 
           {/* Content */}
-          <div className="flex-1 py-8 lg:py-10 flex flex-col gap-2 order-1 lg:order-2">
+          <div className="flex-1 py-6 pb-8 lg:py-10 flex flex-col gap-2">
             <div className="flex flex-col gap-4 mb-2">
-              <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-muted-foreground rounded-lg bg-white/10">
+              <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-border rounded-lg bg-white/10">
                 Case Study
               </span>
               <div className="flex flex-col gap-2">
@@ -693,7 +707,7 @@ export default function HomePage() {
               Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale supporting a mobile-first checkout experience launched across 650+ stores.
             </p>
 
-            <div className="grid grid-cols-4 gap-2 md:gap-4 py-4">
+            <div className="grid grid-cols-4 gap-4 py-4">
               <Metric value="+15%" label="Transaction throughput" />
               <Metric value="$6.2M" label="Hardware savings" />
               <Metric value="86" label="Workflows redesigned" />
@@ -701,10 +715,10 @@ export default function HomePage() {
             </div>
 
             <div>
-              <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
+              <Button variant="outline" asChild className="w-full lg:w-auto border-border shadow-sm bg-white/10">
                 <Link href="/case-studies/point-of-sale" className="flex items-center justify-center gap-2">
                   Read Case Study
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-6 w-6" aria-hidden="true" />
                 </Link>
               </Button>
             </div>

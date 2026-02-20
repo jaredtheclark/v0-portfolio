@@ -72,6 +72,9 @@
   --gradient-page-end: rgba(255, 255, 255, 0.4);
   --gradient-section-light: rgba(255, 255, 255, 0.4);
   --gradient-section-medium: rgba(255, 255, 255, 0.6);
+  /* Case study image container backgrounds */
+  --case-study-image-bg-1: #e3e3d9;
+  --case-study-image-bg-2: #e7e7df;
 }
 
 .dark {
@@ -141,6 +144,9 @@
   --gradient-page-end: rgba(0, 0, 0, 0.4);
   --gradient-section-light: rgba(255, 255, 255, 0.05);
   --gradient-section-medium: rgba(255, 255, 255, 0.08);
+  /* Case study image container backgrounds - dark mode */
+  --case-study-image-bg-1: oklch(0.30 0.02 140);
+  --case-study-image-bg-2: oklch(0.32 0.02 140);
 }
 
 @theme inline {
