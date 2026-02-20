@@ -850,15 +850,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "As the founding designer, I needed to establish a complete design language and component library from scratch while simultaneously shipping product features on an aggressive startup timeline.",
+                    body: "As a founding product designer, I needed to establish a complete design language and component library that supported product interactions while aligning with brand design. This design system needed to integrate simultaneously while our product team shipped product features on an aggressive startup timeline.",
                   },
                   {
                     heading: "Approach",
-                    body: "Created a token-based design system in Figma that mapped directly to React Native components, enabling rapid feature development. Designed the full consumer booking flow, service customization, and real-time tracking experience.",
+                    body: "Created a token-based design system in Figma and worked with development to map these to React Native components, to enable the same rapid feature development in design tools and in code. I later designed the consumer booking flow, service customization, and real-time tracking experience in the application. Customers could book a move, document their possessions, and track them as they were trucked across the country.",
                   },
                   {
                     heading: "Outcome",
-                    body: "Launched the app to market in 5 months. The startup achieved revenue and exited two years later. The design system enabled a small team to ship at startup velocity without sacrificing quality.",
+                    body: "Handled launched to market in five months. The startup reached revenue and was acquired two years later. I designed the UI system to support white-labeling, then worked with the acquiring company to roll out the service across their national brands.",
                   },
                 ],
               }}
