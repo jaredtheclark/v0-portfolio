@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -19,9 +19,19 @@ interface ContactModalProps {
   trigger?: React.ReactNode
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  title?: string
+  description?: string
+  defaultMessage?: string
 }
 
-export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps) {
+export function ContactModal({
+  trigger,
+  open,
+  onOpenChange,
+  title = "Get In Touch",
+  description = "Interested in working together? Fill out the form below and I'll get back to you soon.",
+  defaultMessage = ""
+}: ContactModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,6 +40,13 @@ export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps)
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  // Set default message when modal opens
+  useEffect(() => {
+    if (open && defaultMessage) {
+      setFormData(prev => ({ ...prev, message: defaultMessage }))
+    }
+  }, [open, defaultMessage])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -77,9 +94,9 @@ export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps)
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-display uppercase tracking-tight">Get In Touch</DialogTitle>
+          <DialogTitle className="text-2xl font-display uppercase tracking-tight">{title}</DialogTitle>
           <DialogDescription>
-            Interested in working together? Fill out the form below and I'll get back to you soon.
+            {description}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">

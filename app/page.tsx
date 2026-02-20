@@ -1,17 +1,21 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronsDown } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, ChevronsDown, Eye, EyeOff } from "lucide-react"
+import { toast } from "sonner"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
+import { ContactModal } from "@/components/contact-modal"
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
@@ -100,6 +104,7 @@ function SnapshotCard({
   imageSrc,
   videoSrc,
   isLocked = false,
+  lockedIntro,
   article,
   isGloballyUnlocked,
   onUnlock,
@@ -109,17 +114,25 @@ function SnapshotCard({
   imageSrc: string
   videoSrc?: string
   isLocked?: boolean
+  lockedIntro?: string
   article?: SnapshotArticle
   isGloballyUnlocked?: boolean
   onUnlock?: () => void
 }) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const modalVideoRef = useCallback((node: HTMLVideoElement | null) => {
+    if (node) {
+      node.play().catch(() => {})
+    }
+  }, [])
   const [isHovered, setIsHovered] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
+  const [contactModalOpen, setContactModalOpen] = useState(false)
   const [password, setPassword] = useState("")
   const [pwError, setPwError] = useState(false)
   const [pwLoading, setPwLoading] = useState(false)
   const [shakeKey, setShakeKey] = useState(0)
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -137,23 +150,36 @@ function SnapshotCard({
   }
 
   const handleOpenModal = () => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur()
+    }
     setModalOpen(true)
     setPassword("")
     setPwError(false)
+    setShowPassword(false)
   }
 
   const handlePasswordSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!password.trim()) return
+
+    if (!password.trim()) {
+      setPwError(true)
+      setShakeKey((k) => k + 1)
+      return
+    }
+
     setPwLoading(true)
     setPwError(false)
+
     try {
       const res = await fetch("/api/snapshot-access", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password: password.trim(), snapshotTitle: title }),
       })
+
       if (res.ok) {
+        toast.success("Hey! Thanks for checking out my portfolio, feel free to reach out with any questions.")
         onUnlock?.()
       } else {
         setPwError(true)
@@ -163,6 +189,7 @@ function SnapshotCard({
     } catch {
       setPwError(true)
       setShakeKey((k) => k + 1)
+      setPassword("")
     } finally {
       setPwLoading(false)
     }
@@ -170,6 +197,7 @@ function SnapshotCard({
 
   const showArticle = article && (!isLocked || isGloballyUnlocked)
 
+  
   return (
     <>
       <div className="flex flex-col gap-2 cursor-pointer group" onClick={handleOpenModal} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && handleOpenModal()}>
@@ -178,17 +206,24 @@ function SnapshotCard({
             <h5 className="text-base font-medium text-foreground group-hover:text-primary transition-colors">{title}</h5>
             <p className="text-base font-mono text-muted-foreground">{description}</p>
           </div>
-          {isLocked && (
+          {isLocked && !isGloballyUnlocked && (
             <div className="flex-shrink-0 bg-muted rounded-full p-2">
               <LockIcon />
             </div>
           )}
         </div>
         <div
-          className="overflow-hidden rounded-[4.8px] aspect-[16/10] relative"
+          className="overflow-hidden rounded-[4.8px] aspect-[16/10] relative group/image"
           onMouseEnter={videoSrc ? handleMouseEnter : undefined}
           onMouseLeave={videoSrc ? handleMouseLeave : undefined}
         >
+          {/* Hover overlay - desktop only, same for all cards */}
+          <div className="hidden md:flex absolute inset-0 z-10 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 items-center justify-center bg-[rgba(252,252,251,0.2)] pointer-events-none">
+            <div className="bg-white/10 border border-border/50 backdrop-blur-sm rounded-lg px-6 py-2.5 shadow-sm">
+              <span className="text-sm font-medium text-foreground">See Details</span>
+            </div>
+          </div>
+
           {videoSrc && (
             <video
               ref={videoRef}
@@ -221,21 +256,42 @@ function SnapshotCard({
           setPwError(false)
         }
       }}>
-        <DialogContent className="sm:max-w-2xl overflow-y-auto max-h-[85vh]">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 font-heading text-xl">
-              {title}
-              {isLocked && !isGloballyUnlocked && <LockIcon className="inline-block opacity-60" />}
-            </DialogTitle>
-            <p className="text-sm font-mono text-muted-foreground pt-1">{description}</p>
+        <DialogContent className={`overflow-y-auto ${showArticle ? "sm:max-w-6xl max-h-[95vh]" : "sm:max-w-2xl max-h-[85vh]"}`} onOpenAutoFocus={(e) => e.preventDefault()}>
+          <DialogHeader className="text-left">
+            <div className="flex items-center gap-2">
+              <DialogTitle className="font-heading text-2xl font-semibold -tracking-[0.04em] text-left">
+                {title}
+              </DialogTitle>
+              {isLocked && !isGloballyUnlocked && (
+                <Badge variant="outline" className="gap-1.5 font-normal text-xs">
+                  <LockIcon className="opacity-60" />
+                  Locked
+                </Badge>
+              )}
+            </div>
+            <DialogDescription className="text-base font-mono text-muted-foreground text-left">{description}</DialogDescription>
           </DialogHeader>
 
-          <div className="border-t border-border mt-1 pt-4 flex flex-col gap-4">
+          <div className="flex flex-col">
             {showArticle ? (
               <>
                 <p className="text-base text-muted-foreground leading-relaxed">{article.summary}</p>
+                {videoSrc && (
+                  <div className="mt-4 rounded-lg overflow-hidden">
+                    <video
+                      ref={modalVideoRef}
+                      muted
+                      loop
+                      playsInline
+                      autoPlay
+                      className="w-full"
+                    >
+                      <source src={videoSrc} type="video/mp4" />
+                    </video>
+                  </div>
+                )}
                 {article.blocks.map((block, i) => (
-                  <div key={i} className="flex flex-col gap-2">
+                  <div key={i} className="flex flex-col gap-2 mt-4">
                     {block.image && (
                       <figure className="flex flex-col gap-1">
                         <Image
@@ -260,63 +316,106 @@ function SnapshotCard({
                 ))}
               </>
             ) : isLocked ? (
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                  <p className="text-base leading-relaxed">
-                    This project is covered by a Non-Disclosure Agreement.
-                  </p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    To discuss this project, reach out at{" "}
-                    <button
-                      className="text-primary underline underline-offset-2 cursor-pointer"
-                      onClick={() => {
-                        setModalOpen(false)
-                        setTimeout(() => {
-                          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                        }, 200)
-                      }}
-                    >
-                      Say Hello
-                    </button>
-                    .
-                  </p>
-                </div>
+              <>
+                {/* Paragraph - 16px gap to image */}
+                <p className="text-base leading-relaxed">
+                  {lockedIntro || "This snapshot contains client-sensitive details."} That's just about all I can say, but there's more to see. Request access by emailing me at{" "}
+                  <a
+                    href="mailto:jared@jaredclark.design"
+                    className="text-foreground underline underline-offset-2"
+                  >
+                    jared@jaredclark.design
+                  </a>
+                  {" "}or{" "}
+                  <a
+                    href="https://www.linkedin.com/in/jaredclarkdesign/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground underline underline-offset-2"
+                  >
+                    LinkedIn
+                  </a>
+                  .
+                </p>
 
-                <div className="flex items-center gap-3">
-                  <div className="flex-1 h-px bg-border" />
-                  <span className="text-xs text-muted-foreground font-mono">or</span>
-                  <div className="flex-1 h-px bg-border" />
-                </div>
-
-                <form onSubmit={handlePasswordSubmit} className="flex flex-col gap-3">
-                  <label className="text-sm font-medium text-foreground" htmlFor="snapshot-password">
-                    Enter access password
-                  </label>
-                  <div className="flex gap-2">
-                    <input
-                      key={shakeKey}
-                      id="snapshot-password"
-                      type="password"
-                      value={password}
-                      onChange={(e) => { setPassword(e.target.value); setPwError(false) }}
-                      placeholder="Password"
-                      autoComplete="off"
-                      className={`flex-1 h-9 rounded-md border px-3 text-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors ${
-                        pwError
-                          ? "border-destructive animate-shake"
-                          : "border-input"
-                      }`}
-                    />
-                    <Button type="submit" size="sm" disabled={pwLoading || !password.trim()}>
-                      {pwLoading ? "..." : "Unlock"}
-                      {!pwLoading && <ArrowRight className="h-3 w-3 ml-1" />}
-                    </Button>
+                {/* Video/Image preview in gray container - 16px gap to form */}
+                <div className="bg-[#eeebe2] rounded-lg p-4 mt-4">
+                  <div className="relative w-full aspect-[16/10] rounded-[4.8px] overflow-hidden">
+                    {videoSrc ? (
+                      <video
+                        ref={modalVideoRef}
+                        muted
+                        loop
+                        playsInline
+                        autoPlay
+                        className="w-full h-full object-cover"
+                      >
+                        <source src={videoSrc} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <Image
+                        src={imageSrc}
+                        alt={`${title} preview`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    )}
                   </div>
-                  {pwError && (
-                    <p className="text-sm text-destructive">Incorrect password. Try again.</p>
-                  )}
+                </div>
+
+                {/* Password form - 16px gap from image */}
+                <form onSubmit={handlePasswordSubmit} className="flex flex-col gap-4 mt-4">
+                  <div className="flex flex-col gap-1">
+                    <label className="text-sm font-medium text-foreground" htmlFor="snapshot-password">
+                      Enter access password
+                    </label>
+                    <div className="relative">
+                      <input
+                        key={shakeKey}
+                        id="snapshot-password"
+                        type={showPassword ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => { setPassword(e.target.value); setPwError(false) }}
+                        placeholder="Password"
+                        autoComplete="off"
+                        aria-invalid={pwError}
+                        aria-describedby={pwError ? "password-error" : undefined}
+                        className={`w-full h-9 rounded-lg border px-3 pr-9 text-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-colors shadow-sm ${
+                          pwError ? "border-destructive animate-shake" : "border-input"
+                        }`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-muted/50 transition-colors"
+                        aria-label={showPassword ? "Hide password" : "Show password"}
+                      >
+                        {showPassword ? (
+                          <EyeOff className="h-4 w-4 text-muted-foreground" />
+                        ) : (
+                          <Eye className="h-4 w-4 text-muted-foreground" />
+                        )}
+                      </button>
+                    </div>
+                    {pwError && (
+                      <p id="password-error" className="text-sm text-destructive" role="alert">
+                        {!password.trim()
+                          ? "Enter a code to continue."
+                          : "That code didn't work. Try again or request access."}
+                      </p>
+                    )}
+                  </div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full"
+                    disabled={pwLoading || !password.trim()}
+                  >
+                    {pwLoading ? "..." : "Unlock"}
+                  </Button>
                 </form>
-              </div>
+              </>
             ) : (
               <p className="text-base text-muted-foreground leading-relaxed">
                 No additional content available for this project.
@@ -325,6 +424,14 @@ function SnapshotCard({
           </div>
         </DialogContent>
       </Dialog>
+
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
+        title="Request Snapshot Access"
+        description="I'd be happy to share more details about this project. Let me know what you'd like to see and I'll get back to you soon."
+        defaultMessage={`I'd like to request access to the "${title}" snapshot.`}
+      />
     </>
   )
 }
@@ -632,6 +739,7 @@ export default function HomePage() {
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.mp4"
               isLocked
+              lockedIntro="I researched and designed products that Walmart uses to keep its systems secure."
               isGloballyUnlocked={isUnlocked}
               onUnlock={handleUnlock}
               article={{
@@ -660,6 +768,7 @@ export default function HomePage() {
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
               isLocked
+              lockedIntro="Walmart Luminate (now Scintilla) is a SaaS product from Walmart for its vendors."
               isGloballyUnlocked={isUnlocked}
               onUnlock={handleUnlock}
               article={{
@@ -687,6 +796,7 @@ export default function HomePage() {
               description="User Interface | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
               isLocked
+              lockedIntro="Themis is an internal case management platform that routes and resolves legal matters across thousands of external law firms at enterprise scale."
               isGloballyUnlocked={isUnlocked}
               onUnlock={handleUnlock}
               article={{
@@ -740,6 +850,8 @@ export default function HomePage() {
               title="Follett Corporation"
               description="Service Design | Point of Sale"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
+              isLocked
+              lockedIntro="I designed the point of sale for Follett, a national collegiate bookstore."
               isGloballyUnlocked={isUnlocked}
               onUnlock={handleUnlock}
               article={{

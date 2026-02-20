@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { GrainCanvas } from "@/components/GrainCanvas"
 import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg"
+import { Toaster } from "sonner"
 
 import "./globals.css"
 
@@ -110,6 +111,7 @@ export default function RootLayout({
             <Suspense fallback={null}>{children}</Suspense>
           </div>
           <ThemeToggle />
+          <Toaster />
           <Analytics />
         </ThemeProvider>
       </body>
