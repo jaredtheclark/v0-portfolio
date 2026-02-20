@@ -160,10 +160,10 @@ export default function PointOfSaleCaseStudy() {
 
      {/* Metrics Grid */}
             <div className="row-span-2 col-span-4 md:col-span-3 lg:col-span-7 grid grid-cols-2 auto-rows-min md:grid-cols-4 gap-4 md:gap-6 mt-2">
-              <Metric value="$6.2M" label="Hardware savings" />
+              <Metric value="+15%" label="Transaction throughput" />
               <Metric value="86" label="Workflows redesigned" />
               <Metric value="650+" label="Stores launched" />
-              <Metric value="4 mo" label="Research to handoff" />
+              <Metric value="$6.2M" label="Hardware savings" />
             </div>
 
         </div>

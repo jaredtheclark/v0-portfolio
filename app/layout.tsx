@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { GrainCanvas } from "@/components/GrainCanvas"
 import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg"
+import { Toaster } from "sonner"
 
 import "./globals.css"
 
@@ -69,6 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/* Figma capture script — dev only, never loads in production */}
+      {process.env.NODE_ENV === 'development' && (
+        <head><script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script></head>
+      )}
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
         <ConsoleEasterEgg />
         {/* Fixed animated grain (currently commented for testing static version) */}
@@ -106,6 +111,7 @@ export default function RootLayout({
             <Suspense fallback={null}>{children}</Suspense>
           </div>
           <ThemeToggle />
+          <Toaster />
           <Analytics />
         </ThemeProvider>
       </body>
