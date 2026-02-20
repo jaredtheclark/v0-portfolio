@@ -75,6 +75,16 @@
   /* Case study image container backgrounds */
   --case-study-image-bg-1: #e3e3d9;
   --case-study-image-bg-2: #e7e7df;
+  /* Snapshot locked preview container */
+  --snapshot-preview-bg: #eeebe2;
+  /* Lock icon color */
+  --lock-icon-stroke: #525252;
+  /* Snapshot hover overlay */
+  --snapshot-hover-overlay: rgba(252, 252, 251, 0.2);
+  --snapshot-hover-button-bg: rgba(255, 255, 255, 0.85);
+  /* About page highlight section */
+  --highlight-section-bg: rgba(255, 255, 255, 0.6);
+  --highlight-section-border: #d5d2d0;
 }
 
 .dark {
@@ -147,6 +157,16 @@
   /* Case study image container backgrounds - dark mode */
   --case-study-image-bg-1: oklch(0.30 0.02 140);
   --case-study-image-bg-2: oklch(0.32 0.02 140);
+  /* Snapshot locked preview container - dark mode */
+  --snapshot-preview-bg: oklch(0.25 0.02 140);
+  /* Lock icon color - dark mode (lighter for visibility) */
+  --lock-icon-stroke: oklch(0.75 0.02 140);
+  /* Snapshot hover overlay - dark mode */
+  --snapshot-hover-overlay: rgba(0, 0, 0, 0.4);
+  --snapshot-hover-button-bg: rgba(30, 40, 25, 0.9);
+  /* About page highlight section - dark mode */
+  --highlight-section-bg: rgba(0, 0, 0, 0.15);
+  --highlight-section-border: rgba(0, 0, 0, 0.3);
 }
 
 @theme inline {

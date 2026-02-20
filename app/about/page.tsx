@@ -12,7 +12,12 @@ function GradientDivider() {
   return (
     <div className="h-px w-full">
       <div className="h-full w-full pl-4 md:pl-6 lg:pl-[144px]">
-        <div className="h-full w-full bg-gradient-to-r from-[#d5d2d0] to-transparent" />
+        <div
+          className="h-full w-full"
+          style={{
+            background: "linear-gradient(to right, var(--highlight-section-border), transparent)"
+          }}
+        />
       </div>
     </div>
   )
@@ -55,7 +60,13 @@ export default function AboutPage() {
         </section>
 
         {/* That Led me to where I am now - Highlight Section */}
-        <section className="bg-white/60 border-y border-[#d5d2d0]">
+        <section
+          className="border-y"
+          style={{
+            backgroundColor: "var(--highlight-section-bg)",
+            borderColor: "var(--highlight-section-border)"
+          }}
+        >
           <div className="px-4 md:px-6 lg:px-[144px] py-8 md:py-12">
             <div className="py-8 md:py-[72px] text-center text-foreground">
               <div className="max-w-3xl mx-auto space-y-4">

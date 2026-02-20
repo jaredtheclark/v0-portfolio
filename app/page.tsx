@@ -42,17 +42,16 @@ function LockIcon({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={{ stroke: "var(--lock-icon-stroke)" }}
     >
       <path
         d="M12.6667 7.33301H3.33333C2.59695 7.33301 2 7.92996 2 8.66634V13.333C2 14.0694 2.59695 14.6663 3.33333 14.6663H12.6667C13.403 14.6663 14 14.0694 14 13.333V8.66634C14 7.92996 13.403 7.33301 12.6667 7.33301Z"
-        stroke="#525252"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M4.66797 7.33301V4.66634C4.66797 3.78229 5.01916 2.93444 5.64428 2.30932C6.2694 1.6842 7.11725 1.33301 8.0013 1.33301C8.88536 1.33301 9.7332 1.6842 10.3583 2.30932C10.9834 2.93444 11.3346 3.78229 11.3346 4.66634V7.33301"
-        stroke="#525252"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -218,8 +217,14 @@ function SnapshotCard({
           onMouseLeave={videoSrc ? handleMouseLeave : undefined}
         >
           {/* Hover overlay - desktop only, same for all cards */}
-          <div className="hidden md:flex absolute inset-0 z-10 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 items-center justify-center bg-[rgba(252,252,251,0.2)] pointer-events-none">
-            <div className="bg-white/10 border border-border/50 backdrop-blur-sm rounded-lg px-6 py-2.5 shadow-sm">
+          <div
+            className="hidden md:flex absolute inset-0 z-10 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 items-center justify-center pointer-events-none"
+            style={{ backgroundColor: "var(--snapshot-hover-overlay)" }}
+          >
+            <div
+              className="border border-border/50 backdrop-blur-sm rounded-lg px-6 py-2.5 shadow-sm"
+              style={{ backgroundColor: "var(--snapshot-hover-button-bg)" }}
+            >
               <span className="text-sm font-medium text-foreground">See Details</span>
             </div>
           </div>
@@ -339,7 +344,7 @@ function SnapshotCard({
                 </p>
 
                 {/* Video/Image preview in gray container - 16px gap to form */}
-                <div className="bg-[#eeebe2] rounded-lg p-4 mt-4">
+                <div className="rounded-lg p-4 mt-4" style={{ backgroundColor: "var(--snapshot-preview-bg)" }}>
                   <div className="relative w-full aspect-[16/10] rounded-[4.8px] overflow-hidden">
                     {videoSrc ? (
                       <video
