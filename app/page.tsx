@@ -261,7 +261,7 @@ function SnapshotCard({
           setPwError(false)
         }
       }}>
-        <DialogContent className={`overflow-y-auto ${showArticle ? "sm:max-w-6xl max-h-[95vh]" : "sm:max-w-2xl max-h-[85vh]"}`} onOpenAutoFocus={(e) => e.preventDefault()}>
+        <DialogContent className={`overflow-y-auto ${showArticle ? "sm:max-w-6xl max-h-[80vh] sm:max-h-[95vh]" : "sm:max-w-2xl max-h-[80vh] sm:max-h-[85vh]"}`} onOpenAutoFocus={(e) => e.preventDefault()}>
           <DialogHeader className="text-left">
             <div className="flex items-center gap-2">
               <DialogTitle className="font-heading text-2xl font-semibold -tracking-[0.04em] text-left">
