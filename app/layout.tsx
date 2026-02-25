@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Jared Clark Design",
     images: [
       {
-        url: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/jaredclarkdesign-og.png",
+        url: "/images/homepage/og-image.png",
         width: 1200,
         height: 630,
         alt: "Jared Clark - Product Designer portfolio",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jared Clark | Product Designer",
     description: "Principal UX Product Designer specializing in enterprise fintech transformation.",
-    images: ["https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/jaredclarkdesign-og.png"],
+    images: ["/images/homepage/og-image.png"],
   },
 }
 

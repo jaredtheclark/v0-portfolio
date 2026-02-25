@@ -57,7 +57,7 @@ export default function CaseStudiesPage() {
                 { value: "650+", label: "Stores" },
                 { value: "60M+", label: "Users" },
               ]}
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
+              imageSrc="/images/snapshots/jcpenney.png"
               caseStudyLink="/case-studies/point-of-sale"
             />
 
@@ -71,7 +71,7 @@ export default function CaseStudiesPage() {
                 { value: "4 mo", label: "Delivery time" },
                 { value: "100K+", label: "Customers" },
               ]}
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
+              imageSrc="/images/snapshots/car-mart.png"
               caseStudyLink="/case-studies/enterprise-payments-platform"
             />
 
@@ -85,7 +85,7 @@ export default function CaseStudiesPage() {
                 { value: "650+", label: "Stores" },
                 { value: "60M+", label: "Users" },
               ]}
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
+              imageSrc="/images/snapshots/walmart-infosec.png"
               comingSoon
             />
           </div>

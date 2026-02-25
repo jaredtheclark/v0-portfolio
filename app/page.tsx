@@ -502,7 +502,7 @@ export default function HomePage() {
               }}
             >
               <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/headshot-designer.jpg"
+                src="/images/homepage/headshot-designer.jpg"
                 alt="Jared Clark, Product Designer"
                 fill
                 className="object-cover"
@@ -555,7 +555,7 @@ export default function HomePage() {
               }}
             >
               <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/headshot-designer.jpg"
+                src="/images/homepage/headshot-designer.jpg"
                 alt="Jared Clark, Product Designer"
                 fill
                 className="object-cover"
@@ -569,7 +569,7 @@ export default function HomePage() {
         {/* Background Graphic - Hidden on mobile, visible on larger screens */}
         <div className="absolute top-0 right-0 w-[400px] md:w-[542px] lg:w-[799px] h-full z-0 pointer-events-none" aria-hidden="true">
           <Image
-            src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/background-graphic-T1CqY4VzLndX5jntYzWHQ0e2MbzKHY.svg"
+            src="/images/homepage/background-graphic.svg"
             alt=""
             fill
             className="object-cover"
@@ -592,7 +592,7 @@ export default function HomePage() {
           <div className="lg:hidden pt-6">
             <div className="rounded-[16px] flex items-end justify-center overflow-hidden" style={{ backgroundColor: "var(--case-study-image-bg-1)" }}>
               <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/acm-ipad-mobile-qDSyOGHv3LuyZIutCftZjlgMmqcZyo.png"
+                src="/images/homepage/acm-ipad-mobile.png"
                 alt="Enterprise Payments Platform interface on iPad"
                 width={382}
                 height={232}
@@ -642,7 +642,7 @@ export default function HomePage() {
           {/* Desktop Image - Shows on right on desktop only */}
           <div className="hidden lg:flex flex-1 justify-center">
             <Image
-              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/ACM-iPad-fimEV8EFeOBpxGUooPLPYfiqpQNCgU.png"
+              src="/images/homepage/acm-ipad-desktop.png"
               alt="Enterprise Payments Platform interface on iPad"
               width={909}
               height={710}
@@ -669,25 +669,29 @@ export default function HomePage() {
           {/* Mobile Image - Shows at top on mobile only */}
           <div className="lg:hidden pt-6">
             <div className="rounded-[16px] flex items-end justify-center" style={{ backgroundColor: "var(--case-study-image-bg-2)" }}>
-              <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
-                alt="JCPenney POS device in hand"
-                width={190}
-                height={229}
-                className="w-[190px] h-auto"
-              />
+              <div className="relative w-[190px] h-[229px]">
+                <Image
+                  src="/images/homepage/jcp-m60-hand.png"
+                  alt="JCPenney POS device in hand"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="190px"
+                />
+              </div>
             </div>
           </div>
 
           {/* Desktop Image - Shows on left on desktop only */}
           <div className="hidden lg:flex flex-shrink-0 self-end">
-            <Image
-              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
-              alt="JCPenney POS device in hand"
-              width={373}
-              height={500}
-              className="w-full max-w-[373px] h-auto"
-            />
+            <div className="relative w-full max-w-[373px] h-[500px]">
+              <Image
+                src="/images/homepage/jcp-m60-hand.png"
+                alt="JCPenney POS device in hand"
+                fill
+                className="object-contain object-bottom"
+                sizes="373px"
+              />
+            </div>
           </div>
 
           {/* Content */}
@@ -753,8 +757,8 @@ export default function HomePage() {
             <SnapshotCard
               title="Walmart Information Security"
               description="User Research | Design Systems"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.mp4"
+              imageSrc="/images/snapshots/walmart-infosec.png"
+              videoSrc="/videos/walmart-infosec.mp4"
               isLocked
               lockedIntro="I researched and designed products that Walmart uses to keep its systems secure."
               isGloballyUnlocked={isUnlocked}
@@ -782,8 +786,8 @@ export default function HomePage() {
             <SnapshotCard
               title="Walmart Data Ventures Luminate"
               description="Data Visualization | Prototyping"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
+              imageSrc="/images/snapshots/walmart-luminate.png"
+              videoSrc="/videos/walmart-luminate.mp4"
               isLocked
               lockedIntro="Walmart Luminate (now Scintilla) is a SaaS product from Walmart for its vendors."
               isGloballyUnlocked={isUnlocked}
@@ -811,7 +815,7 @@ export default function HomePage() {
             <SnapshotCard
               title="Walmart Legal Themis"
               description="User Interface | Prototyping"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
+              imageSrc="/images/snapshots/walmart-themis.png"
               isLocked
               lockedIntro="Themis is an internal case management platform that routes and resolves legal matters across thousands of external law firms at enterprise scale."
               isGloballyUnlocked={isUnlocked}
@@ -839,8 +843,8 @@ export default function HomePage() {
             <SnapshotCard
               title="Handled Home"
               description="Design Systems | Consumer App"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.png"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/Handled-movie-.mp4"
+              imageSrc="/images/snapshots/handled-home.png"
+              videoSrc="/videos/handled-home.mp4"
               isGloballyUnlocked={isUnlocked}
               onUnlock={handleUnlock}
               article={{
@@ -866,7 +870,7 @@ export default function HomePage() {
             <SnapshotCard
               title="Follett Corporation"
               description="Service Design | Point of Sale"
-              imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
+              imageSrc="/images/snapshots/follett.png"
               isLocked
               lockedIntro="I designed the point of sale for Follett, a national collegiate bookstore."
               isGloballyUnlocked={isUnlocked}

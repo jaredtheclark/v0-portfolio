@@ -11,20 +11,20 @@ import { cn } from "@/lib/utils"
 // Asset URLs
 const ASSETS = {
   videos: {
-    heroPhone: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-find-order-3d.mp4",
+    heroPhone: "/videos/jcp-find-order-3d.mp4",
   },
   images: {
-    register01: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-onsite-register-01.jpg",
-    register02: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-onsite-register-02.jpg",
-    register03: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-onsite-register-03.jpg",
-    tablet: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-tablet.png",
+    register01: "/images/case-studies/jcp/jcp-onsite-register-01.jpg",
+    register02: "/images/case-studies/jcp/jcp-onsite-register-02.jpg",
+    register03: "/images/case-studies/jcp/jcp-onsite-register-03.jpg",
+    tablet: "/images/case-studies/jcp/jcp-tablet.png",
   },
   icons: {
-    fasterFlow: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/icon/faster-flow.svg",
-    errorProof: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/icon/error-proof.svg",
-    dailyClose: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/icon/daily-close.svg",
-    mobileFirst: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/icon/mobile-first.svg",
-    systemTrust: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/icon/system-trust.svg",
+    fasterFlow: "/images/case-studies/jcp/icons/faster-flow.svg",
+    errorProof: "/images/case-studies/jcp/icons/error-proof.svg",
+    dailyClose: "/images/case-studies/jcp/icons/daily-close.svg",
+    mobileFirst: "/images/case-studies/jcp/icons/mobile-first.svg",
+    systemTrust: "/images/case-studies/jcp/icons/system-trust.svg",
   },
 }
 

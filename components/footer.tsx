@@ -12,7 +12,7 @@ export function Footer() {
           <div className="flex items-start gap-3">
             <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
               <Image
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/headshot-designer.jpg"
+                src="/images/homepage/headshot-designer.jpg"
                 alt="Jared Clark"
                 fill
                 className="object-cover"
