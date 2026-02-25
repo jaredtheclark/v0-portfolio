@@ -8,7 +8,8 @@
       "mcp__figma__get_metadata",
       "Bash(gh issue create:*)",
       "mcp__figma__generate_figma_design",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(curl:*)"
     ]
   }
 }

@@ -47,7 +47,7 @@ export function ContactSection() {
       {/* Background */}
       <div className="absolute inset-0 z-0" role="presentation">
         <Image
-          src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/wavey-background.jpg"
+          src="/images/homepage/wavey-background.jpg"
           alt=""
           fill
           className="object-cover dark:opacity-20"

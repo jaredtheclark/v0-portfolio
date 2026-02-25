@@ -186,7 +186,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
                 muted
                 loop
                 playsInline
-                src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/acm-compare.mp4"
+                src="/videos/acm-compare.mp4"
               >
                 Your browser does not support the video tag.
               </video>

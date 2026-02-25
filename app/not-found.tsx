@@ -40,7 +40,7 @@ export default function NotFound() {
               muted
               playsInline
               loop
-              src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/deborahcox-nobodyssupposedtobehere.mp4"
+              src="/videos/404-easter-egg.mp4"
             >
               Your browser does not support the video tag.
             </video>
