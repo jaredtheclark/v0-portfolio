@@ -2,7 +2,7 @@
 
 **Principal UX Product Designer** focused on business outcomes, design systems, and shipping work that moves metrics.
 
-Live site: **[jaredworks.design](https://vercel.com/jared-jaredworks-projects/v0-portfolio-website-design)**
+Live site: **[jaredclark.design](https://jaredclark.design)**
 
 ---
 
