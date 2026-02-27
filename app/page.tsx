@@ -597,7 +597,7 @@ export default function HomePage() {
                 width={382}
                 height={232}
                 className="w-full max-w-[382px]"
-                style={{ filter: "drop-shadow(0px 1.5px 7.5px rgba(0, 0, 0, 0.25))" }}
+                style={{ height: "auto", filter: "drop-shadow(0px 1.5px 7.5px rgba(0, 0, 0, 0.25))" }}
               />
             </div>
           </div>
@@ -683,7 +683,7 @@ export default function HomePage() {
 
           {/* Desktop Image - Shows on left on desktop only */}
           <div className="hidden lg:flex flex-shrink-0 self-end">
-            <div className="relative w-full max-w-[373px] h-[500px]">
+            <div className="relative w-[373px] h-[500px]">
               <Image
                 src="/images/homepage/jcp-m60-hand.png"
                 alt="JCPenney POS device in hand"
