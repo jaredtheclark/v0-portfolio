@@ -7,7 +7,7 @@ interface CaseStudyCardProps {
   title: string
   subtitle: string
   description: string
-  metrics: { value: string; label: string }[]
+  metrics?: { value: string; label: string }[]
   imageSrc?: string
   caseStudyLink?: string
   comingSoon?: boolean
@@ -22,8 +22,10 @@ export function CaseStudyCard({
   caseStudyLink,
   comingSoon = false,
 }: CaseStudyCardProps) {
-  return (
-    <div className="flex flex-col">
+  const isClickable = !comingSoon && caseStudyLink
+
+  const cardContent = (
+    <>
       {/* Image Container */}
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-[#E8E4DB]">
         {imageSrc && (
@@ -31,7 +33,7 @@ export function CaseStudyCard({
             src={imageSrc}
             alt={`${title} project preview`}
             fill
-            className="object-cover object-center"
+            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         )}
@@ -55,29 +57,43 @@ export function CaseStudyCard({
         </p>
 
         {/* Metrics */}
-        <div className="grid grid-cols-4 gap-2 mb-4">
-          {metrics.map((metric, index) => (
-            <div key={index} className="text-left">
-              <p className="text-base font-semibold text-foreground">
-                {metric.value}
-              </p>
-              <p className="text-xs text-muted-foreground">{metric.label}</p>
-            </div>
-          ))}
-        </div>
+        {metrics && metrics.length > 0 && (
+          <div className="grid grid-cols-4 gap-2 mb-4">
+            {metrics.map((metric, index) => (
+              <div key={index} className="text-left">
+                <p className="text-base font-semibold text-foreground">
+                  {metric.value}
+                </p>
+                <p className="text-xs text-muted-foreground">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* CTA */}
-        {!comingSoon && caseStudyLink && (
+        {isClickable && (
           <div>
-            <Button asChild variant="outline" className="group rounded-lg">
-              <Link href={caseStudyLink}>
-                Read Case Study
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
+            <Button variant="outline" className="rounded-lg pointer-events-none">
+              Read Case Study
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Button>
           </div>
         )}
       </div>
+    </>
+  )
+
+  if (isClickable) {
+    return (
+      <Link href={caseStudyLink} className="flex flex-col group cursor-pointer">
+        {cardContent}
+      </Link>
+    )
+  }
+
+  return (
+    <div className="flex flex-col">
+      {cardContent}
     </div>
   )
 }
