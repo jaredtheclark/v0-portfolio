@@ -49,20 +49,20 @@ export default function CaseStudiesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12">
             <CaseStudyCard
               title="Designing the Future of Retail Checkout"
-              subtitle="JCPenney · Principal UX Architect · 2022"
-              description="Led UI design and design system creation for a national retailer's complete POS overhaul—from 20-year-old registers to mobile-first checkout across 650+ stores."
+              subtitle="JCPenney · Staff Product Designer · 2022"
+              description="Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale software, hardware, and network infrastructure supporting a mobile-first checkout experience launched across 650+ stores."
               metrics={[
+                { value: "+15%", label: "Transaction throughput" },
+                { value: "86", label: "Workflows redesigned" },
+                { value: "650+", label: "Stores launched" },
                 { value: "$6.2M", label: "Hardware savings" },
-                { value: "86", label: "Jobs discovered" },
-                { value: "650+", label: "Stores" },
-                { value: "60M+", label: "Users" },
               ]}
               imageSrc="/images/snapshots/jcpenney.png"
               caseStudyLink="/case-studies/point-of-sale"
             />
 
             <CaseStudyCard
-              title="Do What's Right for Clients and Their Customers"
+              title="Unifying Dealership, Digital, and Retail Payments for a National Auto Retailer"
               subtitle="America's Car-Mart · Principal UX Architect · 2025"
               description="Launched a zero-to-one payments platform in four months achieving 200% increase in auto pay enrollment."
               metrics={[
@@ -79,12 +79,6 @@ export default function CaseStudiesPage() {
               title="Building Mission Critical Tools for Domain Experts"
               subtitle="Walmart · Principal Product Designer · 2024"
               description="Consulted retailer #1 on their design system strategy. Established workflows for designing building tools for information security operations and led the charge to design products."
-              metrics={[
-                { value: "$6.2M", label: "Hardware savings" },
-                { value: "86", label: "Jobs discovered" },
-                { value: "650+", label: "Stores" },
-                { value: "60M+", label: "Users" },
-              ]}
               imageSrc="/images/snapshots/walmart-infosec.png"
               comingSoon
             />
